@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus & Curriculum | Greenwood Public School, Pune</title>
+    <meta name="description" content="Download class-wise curriculum guides and Maharashtra State Board syllabus outlines from Pre-Primary to Class 10 at Greenwood Public School, Pune.">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .academic-nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0 3rem;
+        }
+        .acad-nav-tab {
+            padding: 0.7rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            color: var(--dark);
+            background: #f1f5f9;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .acad-nav-tab:hover, .acad-nav-tab.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+        .stage-table-card {
+            background: var(--white);
+            border-radius: var(--radius-lg, 16px);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2.5rem;
+        }
+        .stage-table-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .stage-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        .stage-table th {
+            background: #f8fafc;
+            color: var(--dark);
+            font-weight: 700;
+            padding: 1rem 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            font-size: 0.92rem;
+        }
+        .stage-table td {
+            padding: 1.1rem 1.5rem;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.93rem;
+            color: #334155;
+        }
+        .stage-table tr:hover td {
+            background: #f8fafc;
+        }
+        .assessment-pill-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        @media (max-width: 800px) {
+            .assessment-pill-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .assessment-card {
+            background: var(--white);
+            border-radius: var(--radius-md, 12px);
+            padding: 1.75rem;
+            border: 1px solid #e2e8f0;
+            border-top: 4px solid var(--secondary);
+            box-shadow: var(--shadow-sm);
+        }
+        #syllabusFilterBar button {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 0.5rem 1.2rem;
+            margin: 0.3rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        #syllabusFilterBar button.active, #syllabusFilterBar button:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+    </style>
+<link rel="stylesheet" href="css/mobile.css"></head>
+<body>
+<div class="top-contact-bar">
+        <div class="container top-contact-container">
+            <div class="top-contact-left">
+                <a href="tel:9876543210" class="top-contact-item"><i class="fa-solid fa-phone"></i> 9876543210</a>
+                <a href="mailto:info@greenwoodschool.edu.in" class="top-contact-item"><i class="fa-solid fa-envelope"></i> info@greenwoodschool.edu.in</a>
+            </div>
+            <div class="top-contact-right">
+                <div class="top-social-links">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <a href="admin.html" class="admin-login-btn"><i class="fa-solid fa-user-lock"></i> Admin Login</a>
+            </div>
+        </div>
+</div>
+    <header class="main-header" id="mainHeader">
+        <div class="container header-container">
+            <a href="index.html" class="school-logo" id="schoolLogo">
+                <img src="assets/logo.svg" alt="Greenwood Public School Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="school-name">Greenwood Public School</span>
+                    <span class="school-motto">Model Colony, Pune</span>
+                </div>
+            </a>
+            <!-- Mobile Navigation Toggle --><button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="about.html" class="nav-link">About Us <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> History of the School</a>
+                        <a href="vision-mission.html" class="dropdown-link"><i class="fa-solid fa-compass"></i> Vision & Mission</a>
+                        <a href="principal-message.html" class="dropdown-link"><i class="fa-solid fa-user-tie"></i> Principal's Message</a>
+                        <a href="management.html" class="dropdown-link"><i class="fa-solid fa-hands-holding-child"></i> Management & Philosophy</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="academics.html" class="nav-link">Academics <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="pre-primary-activities.html" class="dropdown-link"><i class="fa-solid fa-shapes"></i> Pre-Primary</a>
+                        <a href="primary-school.html" class="dropdown-link"><i class="fa-solid fa-book-open-reader"></i> Primary (Grades 1–4)</a>
+                        <a href="secondary-school.html" class="dropdown-link"><i class="fa-solid fa-school"></i> Secondary (SSC)</a>
+                        <a href="syllabus.html" class="dropdown-link"><i class="fa-solid fa-file-pdf"></i> Syllabus & Curriculum</a>
+                        <a href="academic-calendar.html" class="dropdown-link"><i class="fa-solid fa-calendar-days"></i> Calendar & Exams</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="admission.html" class="nav-link">Admissions <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="admission.html#admissionProcess" class="dropdown-link"><i class="fa-solid fa-clipboard-list"></i> Admission Process</a>
+                        <a href="admission.html#eligibility" class="dropdown-link"><i class="fa-solid fa-file-lines"></i> Eligibility & Documents</a>
+                        <a href="admission-enquiry.html" class="dropdown-link"><i class="fa-solid fa-paper-plane"></i> Online Enquiry Form</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="facilities.html" class="nav-link">Facilities</a></div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="student-life.html" class="nav-link">Student Life <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="sports.html" class="dropdown-link"><i class="fa-solid fa-medal"></i> Sports & Athletics</a>
+                        <a href="cultural-activities.html" class="dropdown-link"><i class="fa-solid fa-masks-theater"></i> Cultural Activities</a>
+                        <a href="pre-primary-activities.html" class="dropdown-link"><i class="fa-solid fa-shapes"></i> Pre-Primary Activities</a>
+                        <a href="educational-trips.html" class="dropdown-link"><i class="fa-solid fa-bus"></i> Educational Trips</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="achievements.html" class="nav-link">Achievements <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="achievements.html" class="dropdown-link"><i class="fa-solid fa-award"></i> Student Achievements</a>
+                        <a href="ssc-toppers.html" class="dropdown-link"><i class="fa-solid fa-trophy"></i> SSC Toppers</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="#" class="nav-link">More <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="gallery.html" class="dropdown-link"><i class="fa-solid fa-images"></i> Gallery</a>
+                        <a href="news.html" class="dropdown-link"><i class="fa-solid fa-bullhorn"></i> News & Notices</a>
+                        <a href="faculty.html" class="dropdown-link"><i class="fa-solid fa-chalkboard-user"></i> Faculty & Staff</a>
+                        <a href="parents.html" class="dropdown-link"><i class="fa-solid fa-users"></i> Parents Corner</a>
+                        <a href="alumni.html" class="dropdown-link"><i class="fa-solid fa-user-graduate"></i> Alumni</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner" style="background-image: linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)), url('assets/school_classroom.jpg'); background-position: center; background-size: cover;">
+        <div class="container">
+            <h1>Syllabus & Curriculum</h1>
+            <div class="breadcrumbs"><a href="index.html" style="color: var(--secondary-light);">Home</a> <span>/</span> <a href="academics.html" style="color: var(--secondary-light);">Academics</a> <span>/</span> Syllabus</div>
+        </div>
+    </section>
+
+    <!-- Academics Sub-Nav Pills -->
+    <div class="container" style="margin-top: 2rem;">
+        <div class="academic-nav-tabs">
+            <a href="academics.html" class="acad-nav-tab"><i class="fa-solid fa-graduation-cap"></i> Academics Hub</a>
+            <a href="pre-primary-activities.html" class="acad-nav-tab"><i class="fa-solid fa-shapes"></i> Pre-Primary</a>
+            <a href="primary-school.html" class="acad-nav-tab"><i class="fa-solid fa-book-open-reader"></i> Primary (Grades 1–4)</a>
+            <a href="secondary-school.html" class="acad-nav-tab"><i class="fa-solid fa-school"></i> Secondary (SSC)</a>
+            <a href="syllabus.html" class="acad-nav-tab active"><i class="fa-solid fa-file-pdf"></i> Syllabus & Curriculum</a>
+            <a href="academic-calendar.html" class="acad-nav-tab"><i class="fa-solid fa-calendar-days"></i> Calendar & Exams</a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <section class="section" style="padding-top: 1rem;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="badge" style="background: rgba(30, 58, 138, 0.1); color: var(--primary); font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 50px; display: inline-block; margin-bottom: 0.75rem;">Maharashtra State Board Aligned</span>
+                <h2 style="font-size: 2.1rem; color: var(--primary); margin-bottom: 1rem;">Curriculum Structure & Document Downloads</h2>
+                <p style="font-size: 1.05rem; line-height: 1.8; color: #334155;">
+                    Our academic syllabus is structured in strict conformity with the Maharashtra State Board of Secondary and Higher Secondary Education, enriched with interactive and conceptual learning methodologies from Nursery through Class 10.
+                </p>
+            </div>
+
+            <!-- DYNAMIC SYLLABUS DOWNLOADS FROM ADMIN PANEL -->
+            <div style="background: #f8fafc; border-radius: var(--radius-lg, 16px); padding: 2.5rem 2rem; margin-bottom: 3.5rem; border: 1px solid #e2e8f0;">
+                <div style="text-align: center; max-width: 650px; margin: 0 auto 1.5rem;">
+                    <span class="badge" style="background: rgba(30, 58, 138, 0.1); color: var(--primary, #1E3A8A); font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 50px; display: inline-block; margin-bottom: 0.5rem;">Official Downloads</span>
+                    <h3 style="font-size: 1.8rem; color: var(--primary); margin-bottom: 0.5rem;">Class-Wise Syllabus Documents</h3>
+                    <p style="color: #64748B; font-size: 0.95rem;">Filter by class and download the official PDF curriculum syllabus updated by the school administration.</p>
+                </div>
+
+                <!-- Dynamic Class Filter Bar -->
+                <div id="syllabusFilterBar" style="text-align: center; margin-bottom: 2rem;">
+                    <!-- Rendered by content-loader.js from /api/academics/syllabus -->
+                </div>
+
+                <!-- Dynamic Syllabus Grid -->
+                <div class="grid grid-2 gap-md" id="syllabusGrid">
+                    <p class="text-muted text-center" style="grid-column: 1 / -1; padding: 2rem;"><i class="fa-solid fa-spinner fa-spin"></i> Loading syllabus documents...</p>
+                </div>
+            </div>
+
+            <!-- CURRICULUM OVERVIEW TABLES -->
+            <div style="text-align: center; max-width: 750px; margin: 0 auto 2.5rem;">
+                <span class="badge" style="background: rgba(199, 152, 32, 0.15); color: #854d0e; font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 50px; display: inline-block; margin-bottom: 0.5rem;">Academic Breakdown</span>
+                <h3 style="font-size: 1.9rem; color: var(--primary); margin-bottom: 0.5rem;">Stage-Wise Academic Scope</h3>
+                <p style="color: #64748B; font-size: 0.95rem;">A comprehensive view of subjects, instructional focus, and evaluation criteria across all school stages.</p>
+            </div>
+
+            <!-- Stage 1: Pre-Primary -->
+            <div class="stage-table-card">
+                <div class="stage-table-header">
+                    <div>
+                        <h4 style="font-size: 1.3rem; margin: 0; color: var(--white);"><i class="fa-solid fa-shapes" style="margin-right: 0.5rem; color: var(--secondary-light);"></i> Pre-Primary Stage (Nursery, Jr. KG, Sr. KG)</h4>
+                        <p style="font-size: 0.85rem; opacity: 0.85; margin: 0.25rem 0 0;">Foundational Play-Way & Early Literacy Development</p>
+                    </div>
+                    <span style="background: rgba(255,255,255,0.2); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;">Ages 2.5 – 5.5 Years</span>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="stage-table">
+                        <thead>
+                            <tr>
+                                <th>Subject / Area</th>
+                                <th>Core Topics & Focus</th>
+                                <th>Methodology</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>English Language & Phonics</strong></td>
+                                <td>Alphabet recognition, phonetic sounds, three-letter blending, picture talk, nursery rhymes.</td>
+                                <td>Flashcards, storytelling & phonics audio tools</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pre-Number Concepts & Math</strong></td>
+                                <td>Numbers 1 to 50, counting with beads, big/small, heavy/light concepts, simple addition concepts.</td>
+                                <td>Tactile manipulatives & Montessori apparatus</td>
+                            </tr>
+                            <tr>
+                                <td><strong>General Awareness & EVS</strong></td>
+                                <td>Myself, family, body parts, seasons, fruits, animals, road safety, and personal hygiene.</td>
+                                <td>Theme days, nature walks & visual charts</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Creative & Motor Development</strong></td>
+                                <td>Clay modelling, paper tearing, fingerprinting, tracing, yoga, and gross motor agility play.</td>
+                                <td>Kinesthetic play & art workshops</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Stage 2: Primary (Grades 1–4) -->
+            <div class="stage-table-card">
+                <div class="stage-table-header" style="background: linear-gradient(135deg, #1E3A8A 0%, #172554 100%);">
+                    <div>
+                        <h4 style="font-size: 1.3rem; margin: 0; color: var(--white);"><i class="fa-solid fa-book-open-reader" style="margin-right: 0.5rem; color: #bae6fd;"></i> Primary Stage (Grades 1–4)</h4>
+                        <p style="font-size: 0.85rem; opacity: 0.85; margin: 0.25rem 0 0;">Continuous Comprehensive Evaluation (CCE) Aligned</p>
+                    </div>
+                    <span style="background: rgba(255,255,255,0.2); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;">Grades 1 to 4</span>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="stage-table">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Key Academic Competencies</th>
+                                <th>Assessment Framework</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>English (First Language)</strong></td>
+                                <td>Grammar, prose comprehension, paragraph composition, spelling mastery, reading aloud.</td>
+                                <td>Formative oral reading + Written Unit Tests</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mathematics</strong></td>
+                                <td>4 basic arithmetic operations, tables up to 20, fractions, measurement (length, weight), time.</td>
+                                <td>Classroom quizzes, worksheets & term exams</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Environmental Studies (EVS)</strong></td>
+                                <td>Plants, animal life, ecosystems, community services, historical stories, natural resources.</td>
+                                <td>Project files, observations & semester tests</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Marathi & Hindi</strong></td>
+                                <td>Vowels, consonants, matras, sentence construction, simple poems and conversation.</td>
+                                <td>Dictation, reading tests & written papers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Computer Basics</strong></td>
+                                <td>Hardware components, MS Paint, typing skills, introduction to word processing.</td>
+                                <td>Weekly hands-on lab practicals</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Stage 3: Secondary SSC (Grades 5–10) -->
+            <div class="stage-table-card">
+                <div class="stage-table-header" style="background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);">
+                    <div>
+                        <h4 style="font-size: 1.3rem; margin: 0; color: var(--white);"><i class="fa-solid fa-school" style="margin-right: 0.5rem; color: var(--secondary-light);"></i> Secondary Stage (Grades 5–10 SSC)</h4>
+                        <p style="font-size: 0.85rem; opacity: 0.85; margin: 0.25rem 0 0;">Maharashtra State Board Board Examination Standard</p>
+                    </div>
+                    <span style="background: rgba(255,255,255,0.2); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;">Class 10 SSC Board</span>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="stage-table">
+                        <thead>
+                            <tr>
+                                <th>Subject Stream</th>
+                                <th>Curriculum Scope</th>
+                                <th>Class 10 Board Weightage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Science & Technology (Part 1 & 2)</strong></td>
+                                <td>Gravitation, Periodic Table, Chemical Reactions, Electric Current, Life Processes, Heredity & Ecology.</td>
+                                <td>80 Marks Theory + 20 Marks Practical Journal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mathematics (Algebra & Geometry)</strong></td>
+                                <td>Linear Equations, Quadratic Equations, Arithmetic Progression, Similarity, Circle Theorems, Trigonometry.</td>
+                                <td>80 Marks Theory + 20 Marks Internal Assessments</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Social Sciences</strong></td>
+                                <td>History & Applied History, Political Science & Constitution, Geography & Economics.</td>
+                                <td>80 Marks Theory + 20 Marks Internal Evaluation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>First Language: English</strong></td>
+                                <td>Prose, Poetry, Rapid Reading, Unseen Comprehension, Expansion of Ideas, Letter Writing, Report Drafting.</td>
+                                <td>80 Marks Written + 20 Marks Oral / Listening</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Second & Third Languages</strong></td>
+                                <td>Marathi (Higher/Lower Level) and Hindi Lokbharati / Composite Sanskrit options.</td>
+                                <td>80 Marks Written + 20 Marks Oral / Listening</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Assessment Philosophy -->
+            <div style="background: #f8fafc; border-radius: var(--radius-lg, 16px); padding: 3rem 2rem; margin: 3rem 0; border: 1px solid #e2e8f0;">
+                <div style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">
+                    <span class="badge" style="background: rgba(30, 58, 138, 0.1); color: var(--primary); font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 50px; display: inline-block; margin-bottom: 0.5rem;">Evaluation System</span>
+                    <h3 style="font-size: 1.8rem; color: var(--primary); margin-bottom: 0.5rem;">Evaluation & Assessment Structure</h3>
+                    <p style="color: #64748B; font-size: 0.95rem;">Consistent, transparent evaluation measuring academic progress, concept application, and co-curricular skills.</p>
+                </div>
+
+                <div class="assessment-pill-grid">
+                    <div class="assessment-card">
+                        <div style="font-size: 1.5rem; color: var(--secondary); margin-bottom: 0.5rem;"><i class="fa-solid fa-list-check"></i></div>
+                        <h4 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.35rem;">Formative Continuous Evaluation</h4>
+                        <p style="font-size: 0.9rem; color: #334155; line-height: 1.6;">
+                            Classroom quizzes, laboratory experiments, oral presentations, homework projects, and disciplined classroom conduct throughout the academic terms.
+                        </p>
+                    </div>
+
+                    <div class="assessment-card">
+                        <div style="font-size: 1.5rem; color: var(--secondary); margin-bottom: 0.5rem;"><i class="fa-solid fa-file-signature"></i></div>
+                        <h4 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.35rem;">Summative Examinations</h4>
+                        <p style="font-size: 0.9rem; color: #334155; line-height: 1.6;">
+                            Two comprehensive Unit Tests and two Semester Term Examinations per year, ensuring students master the syllabus incrementally and thoroughly.
+                        </p>
+                    </div>
+
+                    <div class="assessment-card">
+                        <div style="font-size: 1.5rem; color: var(--secondary); margin-bottom: 0.5rem;"><i class="fa-solid fa-comments"></i></div>
+                        <h4 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.35rem;">Parent-Teacher Dialogues</h4>
+                        <p style="font-size: 0.9rem; color: #334155; line-height: 1.6;">
+                            Regular PTMs after each examination where teachers share detailed performance reviews, individualized study advice, and attendance updates with parents.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to action block -->
+            <div style="background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%); border-radius: var(--radius-lg, 16px); padding: 3rem 2rem; color: var(--white); text-align: center; margin-top: 4rem; box-shadow: var(--shadow-xl);">
+                <h3 style="font-size: 1.8rem; margin-bottom: 0.75rem; color: var(--white);">Looking for Exam Schedules or Calendar?</h3>
+                <p style="max-width: 650px; margin: 0 auto 1.75rem; font-size: 1.05rem; opacity: 0.9;">
+                    View examination timetables, holiday schedules, and important dates for the academic year 2026–2027.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="academic-calendar.html" class="btn btn-secondary"><i class="fa-solid fa-calendar-days"></i> Academic Calendar & Exams</a>
+                    <a href="secondary-school.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.6); color: var(--white);"><i class="fa-solid fa-school"></i> Secondary Section (Grades 5–10)</a>
+                    <a href="admission.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.6); color: var(--white);"><i class="fa-solid fa-pen-nib"></i> Admission Enquiry</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <div class="footer-brand">Greenwood School</div>
+                    <p>Committed to educational excellence since 1989.</p>
+                    <p style="color:var(--secondary);font-weight:600;font-size:0.9rem;">"All great achievements happen in small steps"</p>
+                    <div class="footer-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.095!2d73.8567!3d18.5196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c01640000001%3A0x7a5e7a0000000001!2sModel+Colony%2C+Pune!5e0!3m2!1sen!2sin!4v1698000000000" width="100%" height="150" style="border:0;border-radius:8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="School Location"></iframe>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About School</a></li>
+                        <li><a href="sports.html">Sports & Athletics</a></li>
+                        <li><a href="cultural-activities.html">Cultural Activities</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Get in Touch</h3>
+                    <ul class="footer-contact-info">
+                        <li><i class="fa fa-map-marker-alt"></i><span>14, Green Avenue, Model Colony, Pune - 411016.</span></li>
+                        <li><i class="fa fa-phone"></i><span>+91 9876543210</span></li>
+                        <li><i class="fa fa-envelope"></i><span>info@greenwoodschool.edu.in</span></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Office Hours</h3>
+                    <p>For admissions, fee queries, and school visits:</p>
+                    <ul class="footer-contact-info">
+                        <li><i class="fa fa-clock" style="color:var(--secondary);"></i><span>Monday to Friday:<br>9:00 AM to 5:00 PM</span></li>
+                        <li><i class="fa fa-clock" style="color:var(--secondary);"></i><span>Saturday:<br>9:00 AM to 4:00 PM</span></li>
+                    </ul>
+                    <div class="footer-social" style="margin-top:var(--space-md);">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-inner">
+                    <p>&copy; 2026 Greenwood Public School, Pune. All rights reserved.</p>
+                    <p>Managed in association with Greenwood Education Foundation.</p>
+                    <p>Website Developed by <a href="https://greenwoodschool.edu.in/" target="_blank" rel="noopener">EduSphere Technologies</a> | <a href="https://greenwoodschool.edu.in/" target="_blank" rel="noopener">EduSphere Dev Team</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-chevron-up fa-solid"></i></button>
+
+    <script src="js/school.config.js"></script>`n    <script src="js/api.js"></script>
+    <script src="js/admin-auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/content-loader.js"></script>
+</body>
+</html>

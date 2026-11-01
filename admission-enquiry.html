@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Admission Enquiry Form | Greenwood Public School, Pune</title>
+    <meta name="description" content="Submit your admission enquiry for the academic year 2026–2027 at Greenwood Public School, Pune. Direct application for Nursery to Class 10.">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .enquiry-layout-grid {
+            display: grid;
+            grid-template-columns: 1.35fr 0.85fr;
+            gap: 2.5rem;
+            align-items: flex-start;
+            margin: 2rem 0 4rem;
+        }
+        @media (max-width: 900px) {
+            .enquiry-layout-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .enquiry-form-card {
+            background: var(--white);
+            border-radius: var(--radius-lg, 16px);
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+            border-top: 4px solid var(--secondary, #C79820);
+        }
+        .enquiry-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+        .sidebar-card {
+            background: var(--white);
+            border-radius: var(--radius-lg, 16px);
+            padding: 1.75rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+        }
+        .next-steps-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .next-step-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .step-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(30, 58, 138, 0.1);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .nav-direction-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary);
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .nav-direction-pill:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+    </style>
+<link rel="stylesheet" href="css/mobile.css"></head>
+<body>
+<div class="top-contact-bar">
+        <div class="container top-contact-container">
+            <div class="top-contact-left">
+                <a href="tel:9876543210" class="top-contact-item"><i class="fa-solid fa-phone"></i> 9876543210</a>
+                <a href="mailto:info@greenwoodschool.edu.in" class="top-contact-item"><i class="fa-solid fa-envelope"></i> info@greenwoodschool.edu.in</a>
+            </div>
+            <div class="top-contact-right">
+                <div class="top-social-links">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <a href="admin.html" class="admin-login-btn"><i class="fa-solid fa-user-lock"></i> Admin Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="container header-container">
+            <a href="index.html" class="school-logo" id="schoolLogo">
+                <img src="assets/logo.svg" alt="Greenwood Public School Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="school-name">Greenwood Public School</span>
+                    <span class="school-motto">Model Colony, Pune</span>
+                </div>
+            </a>
+            <!-- Mobile Navigation Toggle -->
+            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="about.html" class="nav-link">About Us <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> History of the School</a>
+                        <a href="vision-mission.html" class="dropdown-link"><i class="fa-solid fa-compass"></i> Vision & Mission</a>
+                        <a href="principal-message.html" class="dropdown-link"><i class="fa-solid fa-user-tie"></i> Principal's Message</a>
+                        <a href="management.html" class="dropdown-link"><i class="fa-solid fa-hands-holding-child"></i> Management & Philosophy</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="academics.html" class="nav-link">Academics <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="pre-primary-activities.html" class="dropdown-link"><i class="fa-solid fa-shapes"></i> Pre-Primary</a>
+                        <a href="primary-school.html" class="dropdown-link"><i class="fa-solid fa-book-open-reader"></i> Primary (Grades 1–4)</a>
+                        <a href="secondary-school.html" class="dropdown-link"><i class="fa-solid fa-school"></i> Secondary (SSC)</a>
+                        <a href="syllabus.html" class="dropdown-link"><i class="fa-solid fa-file-pdf"></i> Syllabus & Curriculum</a>
+                        <a href="academic-calendar.html" class="dropdown-link"><i class="fa-solid fa-calendar-days"></i> Calendar & Exams</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="admission.html" class="nav-link active">Admissions <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="admission.html#admissionProcess" class="dropdown-link"><i class="fa-solid fa-clipboard-list"></i> Admission Process</a>
+                        <a href="admission.html#eligibility" class="dropdown-link"><i class="fa-solid fa-file-lines"></i> Eligibility & Documents</a>
+                        <a href="admission-enquiry.html" class="dropdown-link"><i class="fa-solid fa-paper-plane"></i> Online Enquiry Form</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="facilities.html" class="nav-link">Facilities</a></div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="student-life.html" class="nav-link">Student Life <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="sports.html" class="dropdown-link"><i class="fa-solid fa-medal"></i> Sports & Athletics</a>
+                        <a href="cultural-activities.html" class="dropdown-link"><i class="fa-solid fa-masks-theater"></i> Cultural Activities</a>
+                        <a href="pre-primary-activities.html" class="dropdown-link"><i class="fa-solid fa-shapes"></i> Pre-Primary Activities</a>
+                        <a href="educational-trips.html" class="dropdown-link"><i class="fa-solid fa-bus"></i> Educational Trips</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="achievements.html" class="nav-link">Achievements <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="achievements.html" class="dropdown-link"><i class="fa-solid fa-award"></i> Student Achievements</a>
+                        <a href="ssc-toppers.html" class="dropdown-link"><i class="fa-solid fa-trophy"></i> SSC Toppers</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="#" class="nav-link">More <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="gallery.html" class="dropdown-link"><i class="fa-solid fa-images"></i> Gallery</a>
+                        <a href="news.html" class="dropdown-link"><i class="fa-solid fa-bullhorn"></i> News & Notices</a>
+                        <a href="faculty.html" class="dropdown-link"><i class="fa-solid fa-chalkboard-user"></i> Faculty & Staff</a>
+                        <a href="parents.html" class="dropdown-link"><i class="fa-solid fa-users"></i> Parents Corner</a>
+                        <a href="alumni.html" class="dropdown-link"><i class="fa-solid fa-user-graduate"></i> Alumni</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner" style="background-image: linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)), url('assets/school_building_hero.jpg'); background-position: center; background-size: cover;">
+        <div class="container">
+            <h1>Online Admission Enquiry</h1>
+            <div class="breadcrumbs"><a href="index.html" style="color: var(--secondary-light);">Home</a> <span>/</span> <a href="admission.html" style="color: var(--secondary-light);">Admissions</a> <span>/</span> Enquiry Form</div>
+        </div>
+    </section>
+
+    <!-- Sub-Navigation Navigation / Direction Pills -->
+    <div class="container" style="margin-top: 2rem; text-align: center;">
+        <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="admission.html#admissionProcess" class="nav-direction-pill"><i class="fa-solid fa-clipboard-list"></i> Admission Process Guidelines</a>
+            <a href="admission.html#eligibility" class="nav-direction-pill"><i class="fa-solid fa-file-lines"></i> Age Criteria & Required Documents</a>
+            <a href="admission-enquiry.html" class="nav-direction-pill" style="background: var(--primary); color: var(--white); border-color: var(--primary);"><i class="fa-solid fa-paper-plane"></i> Online Enquiry Form</a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <section class="section" style="padding-top: 2rem;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Begin Your Child's Journey at Greenwood School</h2>
+                <p>Please fill out the enquiry form below. Our admissions desk will promptly get in touch with you to guide you through seat availability, document submission, and campus tour scheduling.</p>
+            </div>
+
+            <!-- Two-Column Layout Grid -->
+            <div class="enquiry-layout-grid">
+                <!-- Form Column -->
+                <div class="enquiry-form-card">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary, #1E3A8A); font-weight: 700; margin-bottom: 1.5rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.75rem;">
+                        <i class="fa-solid fa-file-pen" style="color: var(--secondary); margin-right: 0.5rem;"></i> Student & Guardian Details
+                    </h3>
+
+                    <form id="admissionForm" onsubmit="return false;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentName" style="font-weight: 600; color: var(--dark); font-size: 0.95rem;">Student's Full Name *</label>
+                                <input type="text" id="studentName" name="studentName" required placeholder="Enter student's full name" style="border-radius: 8px; padding: 0.75rem 1rem;">
+                            </div>
+                            <div class="form-group">
+                                <label for="parentName" style="font-weight: 600; color: var(--dark); font-size: 0.95rem;">Parent / Guardian Name *</label>
+                                <input type="text" id="parentName" name="parentName" required placeholder="Enter parent's full name" style="border-radius: 8px; padding: 0.75rem 1rem;">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" style="font-weight: 600; color: var(--dark); font-size: 0.95rem;">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="example@email.com" style="border-radius: 8px; padding: 0.75rem 1rem;">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" style="font-weight: 600; color: var(--dark); font-size: 0.95rem;">Mobile Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="10-digit mobile number" style="border-radius: 8px; padding: 0.75rem 1rem;">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="dob" style="font-weight: 600; color: var(--dark); font-size: 0.95rem;">Date of Birth</label>
+                                <input type="date" id="dob" name="dob" style="border-radius: 8px; padding: 0.75rem 1rem;">
+                            </div>
+                            <div class="form-group">
+                                <label for="classApplied" style="font-weight: 600; color: var(--dark); font-size: 0.95rem;">Class Seeking Admission For *</label>
+                                <select id="classApplied" name="classApplied" required style="border-radius: 8px; padding: 0.75rem 1rem;">
+                                    <option value="">-- Select Class --</option>
+                                    <optgroup label="Pre-Primary Section">
+                                        <option value="nursery">Nursery (2.5+ Years)</option>
+                                        <option value="jr-kg">Junior KG (3.5+ Years)</option>
+                                        <option value="sr-kg">Senior KG (4.5+ Years)</option>
+                                    </optgroup>
+                                    <optgroup label="Primary Section (Grades 1–4)">
+                                        <option value="1">Class I</option>
+                                        <option value="2">Class II</option>
+                                        <option value="3">Class III</option>
+                                        <option value="4">Class IV</option>
+                                    </optgroup>
+                                    <optgroup label="Secondary Section (Grades 5–10 SSC)">
+                                        <option value="5">Class V</option>
+                                        <option value="6">Class VI</option>
+                                        <option value="7">Class VII</option>
+                                        <option value="8">Class VIII</option>
+                                        <option value="9">Class IX</option>
+                                        <option value="10">Class X (Subject to board transfer rules)</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" style="font-weight: 600; color: var(--dark); font-size: 0.95rem;">Additional Notes or Previous School Information</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Any specific requirements, previous school background, or queries..." style="border-radius: 8px; padding: 0.75rem 1rem; width: 100%;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.05rem; padding: 0.85rem; border-radius: 8px; font-weight: 700; margin-top: 1rem;">
+                            <i class="fa-solid fa-paper-plane"></i> Submit Admission Enquiry
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Sidebar Guidance Column -->
+                <div class="enquiry-sidebar">
+                    <!-- What Happens Next -->
+                    <div class="sidebar-card" style="border-top: 4px solid var(--secondary);">
+                        <h4 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 1.25rem;">
+                            <i class="fa-solid fa-route" style="color: var(--secondary); margin-right: 0.5rem;"></i> What Happens Next?
+                        </h4>
+                        <ul class="next-steps-list">
+                            <li class="next-step-item">
+                                <span class="step-circle">1</span>
+                                <div>
+                                    <strong style="color: var(--dark); font-size: 0.95rem;">Instant Receipt</strong>
+                                    <p style="font-size: 0.85rem; color: #334155; margin: 0.2rem 0 0;">Your enquiry is logged in our central admissions portal.</p>
+                                </div>
+                            </li>
+                            <li class="next-step-item">
+                                <span class="step-circle">2</span>
+                                <div>
+                                    <strong style="color: var(--dark); font-size: 0.95rem;">Counselor Callback</strong>
+                                    <p style="font-size: 0.85rem; color: #334155; margin: 0.2rem 0 0;">Our admissions counselor contacts you within 24 to 48 working hours.</p>
+                                </div>
+                            </li>
+                            <li class="next-step-item">
+                                <span class="step-circle">3</span>
+                                <div>
+                                    <strong style="color: var(--dark); font-size: 0.95rem;">Campus Visit & Interaction</strong>
+                                    <p style="font-size: 0.85rem; color: #334155; margin: 0.2rem 0 0;">Visit our campus with your child to meet faculty and explore facilities.</p>
+                                </div>
+                            </li>
+                            <li class="next-step-item">
+                                <span class="step-circle">4</span>
+                                <div>
+                                    <strong style="color: var(--dark); font-size: 0.95rem;">Document Verification</strong>
+                                    <p style="font-size: 0.85rem; color: #334155; margin: 0.2rem 0 0;">Submit requisite certificates (Birth Cert/LC/TC, Aadhaar) for confirmation.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Admissions Desk Contact -->
+                    <div class="sidebar-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid var(--secondary, #C79820);">
+                        <h4 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 1rem;">
+                            <i class="fa-solid fa-headset" style="color: var(--secondary); margin-right: 0.5rem;"></i> Admissions Helpdesk
+                        </h4>
+                        <p style="font-size: 0.9rem; color: #334155; margin-bottom: 1rem;">
+                            Prefer visiting in person or speaking directly with our admissions officer?
+                        </p>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-phone" style="color: var(--secondary); width: 16px;"></i>
+                                <span style="font-weight: 600; color: var(--dark);">+91 9876543210 / 020-27654321</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-envelope" style="color: var(--secondary); width: 16px;"></i>
+                                <span style="color: #334155;">info@greenwoodschool.edu.in</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-clock" style="color: var(--secondary); width: 16px;"></i>
+                                <span style="color: #334155;">Mon–Fri: 9:00 AM – 1:00 PM</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-location-dot" style="color: var(--secondary); width: 16px;"></i>
+                                <span style="color: #334155;">Model Colony, Pune – 411003</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Back to Guidelines -->
+                    <div class="sidebar-card" style="text-align: center; background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid var(--primary, #1E3A8A);">
+                        <h5 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem;">Need More Information?</h5>
+                        <p style="font-size: 0.85rem; color: #334155; margin-bottom: 1rem;">Review our complete list of required certificates and step-by-step admission policy.</p>
+                        <a href="admission.html" class="btn btn-outline" style="border-color: var(--primary); color: var(--primary); font-size: 0.88rem; padding: 0.5rem 1rem;">
+                            <i class="fa-solid fa-book-open"></i> View Admission Policy & Documents
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <div class="footer-brand">Greenwood School</div>
+                    <p>Committed to educational excellence since 1989.</p>
+                    <p style="color:var(--secondary);font-weight:600;font-size:0.9rem;">"All great achievements happen in small steps"</p>
+                    <div class="footer-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.095!2d73.8567!3d18.5196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c01640000001%3A0x7a5e7a0000000001!2sModel+Colony%2C+Pune!5e0!3m2!1sen!2sin!4v1698000000000" width="100%" height="150" style="border:0;border-radius:8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="School Location"></iframe>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About School</a></li>
+                        <li><a href="sports.html">Sports & Athletics</a></li>
+                        <li><a href="cultural-activities.html">Cultural Activities</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Get in Touch</h3>
+                    <ul class="footer-contact-info">
+                        <li><i class="fa fa-map-marker-alt"></i><span>14, Green Avenue, Model Colony, Pune - 411016.</span></li>
+                        <li><i class="fa fa-phone"></i><span>+91 9876543210</span></li>
+                        <li><i class="fa fa-envelope"></i><span>info@greenwoodschool.edu.in</span></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Office Hours</h3>
+                    <p>For admissions, fee queries, and school visits:</p>
+                    <ul class="footer-contact-info">
+                        <li><i class="fa fa-clock" style="color:var(--secondary);"></i><span>Monday to Friday:<br>9:00 AM to 5:00 PM</span></li>
+                        <li><i class="fa fa-clock" style="color:var(--secondary);"></i><span>Saturday:<br>9:00 AM to 4:00 PM</span></li>
+                    </ul>
+                    <div class="footer-social" style="margin-top:var(--space-md);">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-inner">
+                    <p>&copy; 2026 Greenwood Public School, Pune. All rights reserved.</p>
+                    <p>Managed in association with Greenwood Education Foundation.</p>
+                    <p>Website Developed by <a href="https://greenwoodschool.edu.in/" target="_blank" rel="noopener">EduSphere Technologies</a> | <a href="https://greenwoodschool.edu.in/" target="_blank" rel="noopener">EduSphere Dev Team</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-chevron-up fa-solid"></i></button>
+
+    <script src="js/school.config.js"></script>`n    <script src="js/api.js"></script>
+    <script src="js/admin-auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/admission.js"></script>
+</body>
+</html>

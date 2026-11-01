@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240" role="img" aria-label="EduSphere Logo">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@400;600&amp;display=swap');
+      .es-globe { animation: pulse-glow 3s ease-in-out infinite; }
+      .es-orbit1 { animation: orbit1 4s linear infinite; transform-origin: 100px 95px; }
+      .es-orbit2 { animation: orbit2 6s linear infinite; transform-origin: 100px 95px; }
+      .es-cap { animation: float-cap 3s ease-in-out infinite; }
+      @keyframes pulse-glow {
+        0%, 100% { filter: drop-shadow(0 0 6px rgba(199,152,32,0.4)); }
+        50% { filter: drop-shadow(0 0 18px rgba(199,152,32,0.9)); }
+      }
+      @keyframes orbit1 {
+        0% { transform: rotate(0deg) translateX(38px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(38px) rotate(-360deg); }
+      }
+      @keyframes orbit2 {
+        0% { transform: rotate(180deg) translateX(50px) rotate(-180deg); }
+        100% { transform: rotate(540deg) translateX(50px) rotate(-540deg); }
+      }
+      @keyframes float-cap {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-4px); }
+      }
+    </style>
+    <radialGradient id="globeGrad" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="60%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </radialGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C79820" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#C79820" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E6C15C"/>
+      <stop offset="100%" stop-color="#C79820"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#C79820"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="globeClip">
+      <circle cx="100" cy="95" r="52"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outer glow ring -->
+  <circle cx="100" cy="95" r="68" fill="url(#glowGrad)" class="es-globe"/>
+
+  <!-- Orbit paths (visual rings) -->
+  <ellipse cx="100" cy="95" rx="65" ry="20" fill="none" stroke="#C79820" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.5"/>
+  <ellipse cx="100" cy="95" rx="50" ry="65" fill="none" stroke="#3B82F6" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.4" transform="rotate(60, 100, 95)"/>
+
+  <!-- Globe body -->
+  <circle cx="100" cy="95" r="52" fill="url(#globeGrad)" class="es-globe"/>
+
+  <!-- Globe geographic lines -->
+  <g clip-path="url(#globeClip)" opacity="0.35">
+    <!-- Latitude lines -->
+    <ellipse cx="100" cy="95" rx="52" ry="16" fill="none" stroke="#C79820" stroke-width="0.8"/>
+    <ellipse cx="100" cy="80" rx="45" ry="12" fill="none" stroke="#C79820" stroke-width="0.6"/>
+    <ellipse cx="100" cy="110" rx="45" ry="12" fill="none" stroke="#C79820" stroke-width="0.6"/>
+    <!-- Longitude lines -->
+    <line x1="100" y1="43" x2="100" y2="147" stroke="#C79820" stroke-width="0.8"/>
+    <ellipse cx="100" cy="95" rx="25" ry="52" fill="none" stroke="#C79820" stroke-width="0.6"/>
+    <ellipse cx="100" cy="95" rx="40" ry="52" fill="none" stroke="#C79820" stroke-width="0.6"/>
+  </g>
+
+  <!-- Globe highlight -->
+  <ellipse cx="85" cy="74" rx="16" ry="10" fill="white" opacity="0.12" transform="rotate(-20, 85, 74)"/>
+
+  <!-- Orbiting dot 1 (small gold planet) -->
+  <circle cx="100" cy="57" r="5" fill="#C79820" filter="url(#glow)" class="es-orbit1"/>
+
+  <!-- Orbiting dot 2 (small blue planet) -->
+  <circle cx="100" cy="45" r="4" fill="#60A5FA" filter="url(#glow)" class="es-orbit2"/>
+
+  <!-- Graduation Cap overlay -->
+  <g class="es-cap" transform="translate(100, 95)">
+    <!-- Cap board (mortarboard) -->
+    <polygon points="-22,-32 0,-42 22,-32 0,-22" fill="url(#capGrad)" filter="url(#glow)"/>
+    <!-- Cap base cylinder -->
+    <rect x="-10" y="-32" width="20" height="12" rx="2" fill="#0F172A" opacity="0.85"/>
+    <!-- Tassel string -->
+    <line x1="18" y1="-34" x2="22" y2="-22" stroke="#C79820" stroke-width="1.5"/>
+    <circle cx="22" cy="-20" r="3" fill="#C79820"/>
+  </g>
+
+  <!-- Outer decorative ring -->
+  <circle cx="100" cy="95" r="55" fill="none" stroke="#C79820" stroke-width="1" opacity="0.4" stroke-dasharray="2 4"/>
+
+  <!-- EduSphere Text -->
+  <text x="100" y="173" text-anchor="middle" font-family="Georgia, 'Playfair Display', serif" font-size="22" font-weight="700" fill="url(#textGrad)" letter-spacing="1">EduSphere</text>
+
+  <!-- Tagline Text -->
+  <text x="100" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0.5">Knowledge Without Boundaries</text>
+
+  <!-- Decorative underline below EduSphere -->
+  <line x1="55" y1="198" x2="145" y2="198" stroke="#C79820" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="55" cy="198" r="2" fill="#C79820" opacity="0.7"/>
+  <circle cx="145" cy="198" r="2" fill="#C79820" opacity="0.7"/>
+  <circle cx="100" cy="198" r="3" fill="#C79820"/>
+</svg>

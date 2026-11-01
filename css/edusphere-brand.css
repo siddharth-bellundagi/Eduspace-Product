@@ -1,0 +1,258 @@
+﻿/* =========================================
+   EDUSPHERE BRANDING CSS
+   Brand Layer for Greenwood Public School
+   ========================================= */
+
+/* ---- CSS Custom Properties ---- */
+:root {
+    --es-primary:        #1E3A8A;
+    --es-primary-dark:   #172554;
+    --es-primary-light:  #3B82F6;
+    --es-accent:         #C79820;
+    --es-accent-light:   #E6C15C;
+    --es-dark:           #0F172A;
+    --es-slate:          #334155;
+    --es-muted:          #64748B;
+    --es-white:          #FFFFFF;
+    --es-glass:          rgba(255,255,255,0.08);
+    --es-glass-border:   rgba(199,152,32,0.3);
+    --es-gradient:       linear-gradient(135deg, #1E3A8A 0%, #3B82F6 50%, #C79820 100%);
+    --es-gradient-dark:  linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
+    --es-gradient-gold:  linear-gradient(135deg, #C79820 0%, #E6C15C 100%);
+    --es-shadow:         0 10px 40px rgba(30,58,138,0.2);
+    --es-shadow-gold:    0 8px 25px rgba(199,152,32,0.3);
+    --es-radius:         16px;
+    --es-radius-lg:      24px;
+}
+
+/* ---- Animations ---- */
+@keyframes es-pulse-glow {
+    0%, 100% { box-shadow: 0 0 12px rgba(199,152,32,0.4), 0 0 24px rgba(30,58,138,0.2); }
+    50%       { box-shadow: 0 0 24px rgba(199,152,32,0.8), 0 0 48px rgba(59,130,246,0.4); }
+}
+@keyframes es-orbit {
+    from { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+}
+@keyframes es-float {
+    0%, 100% { transform: translateY(0px); }
+    50%      { transform: translateY(-8px); }
+}
+@keyframes es-shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+@keyframes es-fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes es-border-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* ---- EduSphere Tagline (header) ---- */
+.es-tagline {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #C79820;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin-top: 2px;
+    font-family: Arial, sans-serif;
+}
+
+/* ---- Animated Logo ---- */
+.es-logo-animated {
+    animation: es-float 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 16px rgba(199,152,32,0.5));
+    transition: filter 0.3s ease;
+}
+.es-logo-animated:hover {
+    filter: drop-shadow(0 0 28px rgba(199,152,32,0.9));
+}
+
+/* ---- EduSphere Badge (floating) ---- */
+.edusphere-badge {
+    position: fixed;
+    bottom: 90px;
+    left: 24px;
+    z-index: 999;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--es-gradient);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: var(--es-shadow-gold);
+    animation: es-pulse-glow 3s ease-in-out infinite;
+    text-decoration: none;
+    border: 1px solid rgba(199,152,32,0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.edusphere-badge:hover {
+    transform: scale(1.06) translateY(-2px);
+    box-shadow: 0 12px 35px rgba(199,152,32,0.5);
+}
+.edusphere-badge img {
+    width: 20px;
+    height: 20px;
+}
+
+/* ---- Hero Gradient Overlay ---- */
+.es-hero-overlay {
+    position: relative;
+}
+.es-hero-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--es-gradient);
+    opacity: 0.75;
+    pointer-events: none;
+}
+
+/* ---- Wavy Section Divider ---- */
+.es-section-divider {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    display: block;
+    margin: -1px 0;
+}
+.es-section-divider svg {
+    display: block;
+    width: 100%;
+    height: 60px;
+}
+.es-section-divider-top svg {
+    transform: scaleY(-1);
+}
+
+/* ---- Premium Card ---- */
+.es-card-premium {
+    position: relative;
+    border-radius: var(--es-radius);
+    background: #fff;
+    padding: 2rem;
+    overflow: hidden;
+    box-shadow: var(--es-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.es-card-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--es-radius);
+    padding: 2px;
+    background: var(--es-gradient);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+.es-card-premium:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(30,58,138,0.18);
+}
+
+/* ---- Powered By Footer Badge ---- */
+.es-powered-by {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0.5rem 0 1rem;
+    border: 1px solid rgba(199,152,32,0.4);
+    letter-spacing: 0.3px;
+    width: fit-content;
+}
+.es-powered-by img {
+    width: 18px;
+    height: 18px;
+}
+
+/* ---- Platform Section Cards ---- */
+.es-platform-section .es-platform-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.es-platform-section .es-platform-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* ---- Gradient Text Utility ---- */
+.es-gradient-text {
+    background: var(--es-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ---- Gold Shimmer Button ---- */
+.es-btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--es-gradient-gold);
+    color: #0F172A;
+    font-weight: 700;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--es-shadow-gold);
+}
+.es-btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 35px rgba(199,152,32,0.45);
+}
+
+/* ---- EduSphere Nav Link ---- */
+.nav-link[href="edusphere-platform.html"] {
+    color: #C79820 !important;
+    font-weight: 700 !important;
+    position: relative;
+}
+.nav-link[href="edusphere-platform.html"]::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #C79820;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+.nav-link[href="edusphere-platform.html"]:hover::after {
+    transform: scaleX(1);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .edusphere-badge {
+        bottom: 80px;
+        left: 12px;
+        padding: 6px 12px;
+        font-size: 0.72rem;
+    }
+    .es-tagline {
+        font-size: 0.65rem;
+    }
+}

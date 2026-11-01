@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
+  <defs>
+    <!-- Circular gradient background -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1a4b8c;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0d2d5e;stop-opacity:1"/>
+    </radialGradient>
+    <!-- Gold gradient for accents -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0c040;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#c79820;stop-opacity:1"/>
+    </linearGradient>
+    <!-- Green gradient for tree -->
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#34d399;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1"/>
+    </linearGradient>
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000044"/>
+    </filter>
+  </defs>
+
+  <!-- Outer decorative ring (gold) -->
+  <circle cx="110" cy="110" r="108" fill="url(#goldGrad)" filter="url(#shadow)"/>
+  <!-- White ring separator -->
+  <circle cx="110" cy="110" r="103" fill="white"/>
+  <!-- Inner blue circle background -->
+  <circle cx="110" cy="110" r="99" fill="url(#bgGrad)"/>
+
+  <!-- Inner decorative ring (gold thin) -->
+  <circle cx="110" cy="110" r="94" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+
+  <!-- ===== TREE ICON (center-top) ===== -->
+  <!-- Tree trunk -->
+  <rect x="106" y="108" width="8" height="22" rx="2" fill="#a0704a"/>
+  <!-- Tree base ground line -->
+  <rect x="95" y="128" width="30" height="3" rx="1.5" fill="#c79820"/>
+
+  <!-- Tree canopy layers (bottom to top, getting smaller) -->
+  <!-- Layer 3 (bottom, widest) -->
+  <polygon points="110,68 82,112 138,112" fill="url(#greenGrad)" opacity="0.85"/>
+  <!-- Layer 2 (middle) -->
+  <polygon points="110,58 86,96 134,96" fill="url(#greenGrad)" opacity="0.92"/>
+  <!-- Layer 1 (top, smallest) -->
+  <polygon points="110,46 90,80 130,80" fill="url(#greenGrad)"/>
+
+  <!-- Stars / sparkles on tree (knowledge) -->
+  <circle cx="103" cy="72" r="1.8" fill="#f0c040" opacity="0.9"/>
+  <circle cx="118" cy="78" r="1.4" fill="#f0c040" opacity="0.9"/>
+  <circle cx="99"  cy="85" r="1.2" fill="#f0c040" opacity="0.8"/>
+  <circle cx="121" cy="90" r="1.5" fill="#f0c040" opacity="0.8"/>
+  <circle cx="108" cy="62" r="1"   fill="#f0c040" opacity="0.7"/>
+
+  <!-- Open book at the base of tree -->
+  <g transform="translate(110,130)">
+    <!-- Left page -->
+    <path d="M-18,0 Q-9,-4 0,0 L0,14 Q-9,10 -18,14 Z" fill="white" opacity="0.92"/>
+    <!-- Right page -->
+    <path d="M18,0 Q9,-4 0,0 L0,14 Q9,10 18,14 Z" fill="#e8f4f8" opacity="0.92"/>
+    <!-- Spine -->
+    <line x1="0" y1="0" x2="0" y2="14" stroke="#c79820" stroke-width="1.2"/>
+    <!-- Book outline -->
+    <path d="M-18,0 Q-9,-4 0,0 Q9,-4 18,0 L18,14 Q9,10 0,14 Q-9,10 -18,14 Z" fill="none" stroke="#c79820" stroke-width="0.8"/>
+    <!-- Lines on pages -->
+    <line x1="-15" y1="4"  x2="-2" y2="2"  stroke="#aaa" stroke-width="0.6"/>
+    <line x1="-15" y1="7"  x2="-2" y2="5"  stroke="#aaa" stroke-width="0.6"/>
+    <line x1="-15" y1="10" x2="-2" y2="8"  stroke="#aaa" stroke-width="0.6"/>
+    <line x1="15"  y1="4"  x2="2"  y2="2"  stroke="#aaa" stroke-width="0.6"/>
+    <line x1="15"  y1="7"  x2="2"  y2="5"  stroke="#aaa" stroke-width="0.6"/>
+    <line x1="15"  y1="10" x2="2"  y2="8"  stroke="#aaa" stroke-width="0.6"/>
+  </g>
+
+  <!-- ===== TEXT ===== -->
+  <!-- School name top arc -->
+  <path id="topArc" d="M 25,110 A 85,85 0 0,1 195,110" fill="none"/>
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="13.5" font-weight="bold" fill="url(#goldGrad)" letter-spacing="1.5">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">GREENWOOD PUBLIC SCHOOL</textPath>
+  </text>
+
+  <!-- Bottom arc text -->
+  <path id="bottomArc" d="M 35,135 A 80,80 0 0,0 185,135" fill="none"/>
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#b0c8f0" letter-spacing="1.2">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">Model Colony, Pune</textPath>
+  </text>
+
+  <!-- Tagline / motto band -->
+  <rect x="55" y="186" width="110" height="16" rx="3" fill="url(#goldGrad)" opacity="0.9"/>
+  <text x="110" y="198" font-family="Georgia, serif" font-size="8.5" font-weight="bold" fill="#0d2d5e" text-anchor="middle" letter-spacing="1">KNOWLEDGE · INTEGRITY · EXCELLENCE</text>
+
+  <!-- Decorative dots at sides of crest -->
+  <circle cx="22"  cy="110" r="3.5" fill="url(#goldGrad)"/>
+  <circle cx="198" cy="110" r="3.5" fill="url(#goldGrad)"/>
+</svg>

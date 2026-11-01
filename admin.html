@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin Dashboard | Greenwood Public School</title>
+    <meta name="description" content="Centralized Content Management & Administrative Portal for Greenwood Public School.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <style>
+/* ══ ADMIN RESPONSIVE — INLINE, ALWAYS WORKS ══ */
+html,body{overflow-x:hidden!important;max-width:100vw!important;}
+
+@media screen and (max-width:1024px){
+  .dashboard-layout{display:block!important;min-height:unset!important;}
+  .dashboard-sidebar{width:100%!important;border-right:none!important;border-bottom:2px solid #e2e8f0!important;padding:.5rem!important;position:sticky!important;top:0!important;z-index:99!important;background:#fff!important;}
+  .sidebar-menu{display:flex!important;flex-direction:row!important;overflow-x:auto!important;flex-wrap:nowrap!important;gap:4px!important;margin:0!important;padding-bottom:2px!important;}
+  .sidebar-item{flex-shrink:0!important;}
+  .sidebar-item button{white-space:nowrap!important;font-size:.78rem!important;padding:.35rem .7rem!important;border-radius:20px!important;}
+  .sidebar-title{display:none!important;}
+  .nav-badge{display:none!important;}
+  .dashboard-main{display:block!important;width:100%!important;padding:.85rem!important;}
+  .stats-grid{grid-template-columns:repeat(2,1fr)!important;}
+}
+
+@media screen and (max-width:768px){
+  .dashboard-nav{padding:.45rem .75rem!important;}
+  .dashboard-nav-container{display:flex!important;flex-wrap:nowrap!important;justify-content:space-between!important;align-items:center!important;gap:.25rem!important;}
+  .dashboard-brand{gap:5px!important;min-width:0!important;flex-shrink:1!important;overflow:hidden!important;}
+  .dashboard-brand img{height:26px!important;flex-shrink:0!important;}
+  .dashboard-brand span{font-size:.65rem!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;max-width:80px!important;}
+  .dashboard-nav-right{gap:.2rem!important;flex-shrink:0!important;display:flex!important;align-items:center!important;}
+  .system-health-pill #systemHealthText{display:none!important;}
+  .system-health-pill{padding:3px 6px!important;}
+  .nav-visit-btn{padding:.3rem .45rem!important;font-size:0!important;}
+  .nav-visit-btn i{font-size:.85rem!important;}
+  .nav-visit-btn span{display:none!important;}
+  .admin-login-btn,#adminLoginBtn{padding:.3rem .45rem!important;font-size:0!important;}
+  .admin-login-btn i,#adminLoginBtn i{font-size:.85rem!important;}
+  .admin-login-btn span,#adminLoginBtn span{display:none!important;}
+  .dashboard-main{padding:.6rem!important;}
+  .stats-grid{grid-template-columns:repeat(2,1fr)!important;gap:.5rem!important;}
+  .stat-card{padding:.65rem!important;}
+  .dashboard-header-block{flex-direction:column!important;align-items:stretch!important;gap:.5rem!important;}
+  .dashboard-header-block h1{font-size:.95rem!important;}
+  .btn-primary-action{width:100%!important;justify-content:center!important;}
+  .card-header-bar{flex-direction:column!important;align-items:stretch!important;padding:.65rem!important;gap:.5rem!important;}
+  .search-filter-box{flex-direction:column!important;width:100%!important;gap:.4rem!important;}
+  .search-input-wrapper,.filter-select{width:100%!important;}
+  .admin-table-wrapper{overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;}
+  .admin-table{min-width:420px!important;font-size:.76rem!important;}
+  .admin-table th,.admin-table td{padding:.4rem .5rem!important;white-space:nowrap!important;}
+  .pagination-footer{flex-direction:column!important;align-items:center!important;padding:.55rem!important;gap:.4rem!important;font-size:.76rem!important;}
+  .admin-modal-overlay{align-items:flex-end!important;}
+  .admin-modal.dashboard-modal-container{width:100%!important;max-width:100%!important;border-radius:16px 16px 0 0!important;max-height:92vh!important;overflow-y:auto!important;margin:0!important;}
+  .dashboard-form-grid{grid-template-columns:1fr!important;}
+  .dashboard-form-group input,.dashboard-form-group select,.dashboard-form-group textarea{font-size:16px!important;}
+  .dashboard-modal-body{max-height:60vh!important;}
+  .dashboard-modal-footer{flex-direction:column!important;gap:.4rem!important;}
+  .dashboard-modal-footer button,.dashboard-modal-footer .admin-login-submit{width:100%!important;}
+  .admin-toast{right:.5rem!important;left:.5rem!important;bottom:.75rem!important;}
+}
+    </style>
+</head>
+<body class="admin-dashboard-body">
+
+    <!-- Top Navigation Bar -->
+    <nav class="dashboard-nav">
+        <div class="dashboard-nav-container">
+            <a href="index.html" class="dashboard-brand">
+                <img src="assets/logo.svg" alt="Greenwood School Crest">
+                <span>Greenwood Admin</span>
+            </a>
+            <div class="dashboard-nav-right">
+                <div class="system-health-pill" id="systemHealthPill">
+                    <span class="dot"></span>
+                    <span id="systemHealthText">Checking Backend...</span>
+                </div>
+                <a href="index.html" class="btn-primary-action nav-visit-btn" style="background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.3);color:white;text-decoration:none;">
+                    <i class="fa-solid fa-globe"></i><span> Visit Website</span>
+                </a>
+                <div class="admin-topbar-user">
+                    <a href="#" class="admin-login-btn" id="adminLoginBtn"><i class="fa-solid fa-user-lock"></i><span> Admin Login</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <a href="index.html" style="display: flex; align-items: center; gap: 8px; color: #1d4ed8; font-size: 0.85rem; font-weight: 600; text-decoration: none; margin-bottom: 1.25rem; padding: 0.6rem 0.85rem; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; transition: background 0.2s;">
+                <i class="fa-solid fa-arrow-left"></i> Return to Website
+            </a>
+            <div class="sidebar-title">Content Modules</div>
+            <ul class="sidebar-menu" id="sidebarMenu">
+                <li class="sidebar-item">
+                    <button class="active" data-module="announcements">
+                        <span class="nav-label"><i class="fa-solid fa-bullhorn nav-icon"></i> Announcements</span>
+                        <span class="nav-badge" id="badge-announcements">-</span>
+                    </button>
+                </li>
+                <li class="sidebar-item">
+                    <button data-module="ticker">
+                        <span class="nav-label"><i class="fa-solid fa-bolt nav-icon"></i> News Ticker</span>
+                        <span class="nav-badge" id="badge-ticker">-</span>
+                    </button>
+                </li>
+                <li class="sidebar-item">
+                    <button data-module="events">
+                        <span class="nav-label"><i class="fa-solid fa-calendar-days nav-icon"></i> Upcoming Events</span>
+                        <span class="nav-badge" id="badge-events">-</span>
+                    </button>
+                </li>
+                <li class="sidebar-item">
+                    <button data-module="gallery">
+                        <span class="nav-label"><i class="fa-solid fa-images nav-icon"></i> Photo Gallery</span>
+                        <span class="nav-badge" id="badge-gallery">-</span>
+                    </button>
+                </li>
+                <li class="sidebar-item">
+                    <button data-module="faculty">
+                        <span class="nav-label"><i class="fa-solid fa-chalkboard-user nav-icon"></i> Faculty & Staff</span>
+                        <span class="nav-badge" id="badge-faculty">-</span>
+                    </button>
+                </li>
+                
+                                <div class="sidebar-title" style="margin-top: 1rem;">Academics</div>
+                <li class="sidebar-item">
+                    <button data-module="academicPrograms">
+                        <span class="nav-label"><i class="fa-solid fa-graduation-cap nav-icon"></i> Academic Programs</span>
+                        <span class="nav-badge" id="badge-academicPrograms">-</span>
+                    </button>
+                </li>
+                <li class="sidebar-item">
+                    <button data-module="academicCalendar">
+                        <span class="nav-label"><i class="fa-solid fa-calendar-check nav-icon"></i> Academic Calendar</span>
+                        <span class="nav-badge" id="badge-academicCalendar">-</span>
+                    </button>
+                </li>
+                <li class="sidebar-item">
+                    <button data-module="syllabus">
+                        <span class="nav-label"><i class="fa-solid fa-book-bookmark nav-icon"></i> Syllabus by Class</span>
+                        <span class="nav-badge" id="badge-syllabus">-</span>
+                    </button>
+                </li>
+                <li class="sidebar-item">
+                    <button data-module="exams">
+                        <span class="nav-label"><i class="fa-solid fa-file-lines nav-icon"></i> Exam Schedules</span>
+                        <span class="nav-badge" id="badge-exams">-</span>
+                    </button>
+                </li>
+
+                <div class="sidebar-title" style="margin-top: 1rem;">Submissions & Forms</div>
+                <li class="sidebar-item">
+                    <button data-module="admissions">
+                        <span class="nav-label"><i class="fa-solid fa-user-graduate nav-icon"></i> Admission Enquiries</span>
+                        <span class="nav-badge" id="badge-admissions">-</span>
+                    </button>
+                </li>
+                <li class="sidebar-item">
+                    <button data-module="contact">
+                        <span class="nav-label"><i class="fa-solid fa-envelope-open-text nav-icon"></i> Contact Messages</span>
+                        <span class="nav-badge" id="badge-contact">-</span>
+                    </button>
+                </li>
+                <li class="sidebar-item">
+                    <button data-module="alumni">
+                        <span class="nav-label"><i class="fa-solid fa-graduation-cap nav-icon"></i> Alumni Registrations</span>
+                        <span class="nav-badge" id="badge-alumni">-</span>
+                    </button>
+                </li>
+
+                <div class="sidebar-title" style="margin-top: 1rem;">Resources & Extras</div>
+                <li class="sidebar-item">
+                    <button data-module="downloads">
+                        <span class="nav-label"><i class="fa-solid fa-file-arrow-down nav-icon"></i> Parent Downloads</span>
+                        <span class="nav-badge" id="badge-downloads">-</span>
+                    </button>
+                </li>
+                <li class="sidebar-item">
+                    <button data-module="achievements">
+                        <span class="nav-label"><i class="fa-solid fa-trophy nav-icon"></i> Achievements</span>
+                        <span class="nav-badge" id="badge-achievements">-</span>
+                    </button>
+                </li>
+                <li class="sidebar-item">
+                    <button data-module="toppers">
+                        <span class="nav-label"><i class="fa-solid fa-medal nav-icon"></i> SSC Toppers</span>
+                        <span class="nav-badge" id="badge-toppers">-</span>
+                    </button>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="dashboard-main">
+            <!-- Metric Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue"><i class="fa-solid fa-bullhorn"></i></div>
+                    <div class="stat-details">
+                        <h3 id="stat-announcements">0</h3>
+                        <p>Announcements</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon gold"><i class="fa-solid fa-calendar-check"></i></div>
+                    <div class="stat-details">
+                        <h3 id="stat-events">0</h3>
+                        <p>Upcoming Events</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="fa-solid fa-file-signature"></i></div>
+                    <div class="stat-details">
+                        <h3 id="stat-admissions">0</h3>
+                        <p>Admission Enquiries</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple"><i class="fa-solid fa-users"></i></div>
+                    <div class="stat-details">
+                        <h3 id="stat-faculty">0</h3>
+                        <p>Faculty & Staff</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Workspace Card -->
+            <div class="content-card">
+                <div class="card-header-bar">
+                    <div class="card-header-title">
+                        <i class="fa-solid fa-layer-group" style="color: #2563eb;"></i>
+                        <h2 id="currentModuleTitle">Announcements</h2>
+                    </div>
+
+                    <div class="search-filter-box">
+                        <div class="search-input-wrapper">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="searchInput" placeholder="Search entries...">
+                        </div>
+                        <select id="filterStatus" class="filter-select">
+                            <option value="">All Statuses</option>
+                            <option value="active">Active Only</option>
+                            <option value="inactive">Inactive Only</option>
+                        </select>
+                        <button class="btn-primary-action" id="btnExportCSV" style="background: linear-gradient(135deg, #059669, #10b981);">
+                            <i class="fa-solid fa-file-excel"></i> Export CSV
+                        </button>
+                        <button class="btn-primary-action" id="btnAddNew">
+                            <i class="fa-solid fa-plus"></i> Add New
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Table Content -->
+                <div class="admin-table-wrapper">
+                    <table class="admin-table" id="dashboardTable">
+                        <thead>
+                            <tr id="tableHeaderRow">
+                                <th>Loading...</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <tr>
+                                <td colspan="5" style="text-align: center; padding: 2rem;">
+                                    <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 1.5rem; color: #3b82f6;"></i>
+                                    <p style="margin-top: 8px; color: #64748b;">Fetching entries from backend...</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination Footer -->
+                <div class="pagination-footer">
+                    <div id="paginationInfo">Showing 0 of 0 entries</div>
+                    <div class="pagination-controls">
+                        <button class="pagination-btn" id="btnPrevPage" disabled><i class="fa-solid fa-chevron-left"></i> Previous</button>
+                        <span id="pageIndicator" style="font-weight: 600;">Page 1</span>
+                        <button class="pagination-btn" id="btnNextPage" disabled>Next <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Universal CRUD Form Modal -->
+    <div class="admin-modal-overlay" id="crudModal">
+        <div class="admin-modal dashboard-modal-container">
+            <button class="admin-modal-close" id="crudModalClose" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="admin-modal-header">
+                <h2 id="crudModalTitle">Add New Entry</h2>
+                <p id="crudModalSubtitle">Fill in the required information</p>
+            </div>
+            <form id="crudForm">
+                <div class="dashboard-modal-body">
+                    <div class="dashboard-form-grid" id="crudFormFields">
+                        <!-- Dynamically populated fields -->
+                    </div>
+                </div>
+                <div class="dashboard-modal-footer" style="margin-top: 1.5rem; display: flex; justify-content: flex-end; gap: 10px;">
+                    <button type="button" class="pagination-btn" id="crudModalCancel">Cancel</button>
+                    <button type="submit" class="admin-login-submit" id="crudModalSubmit" style="width: auto; padding: 0.65rem 1.5rem; margin-top: 0;">
+                        <i class="fa-solid fa-check"></i> Save Record
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Core Scripts -->
+    <script src="js/school.config.js"></script>`n    <script src="js/api.js"></script>
+    <script src="js/admin-auth.js"></script>
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html>

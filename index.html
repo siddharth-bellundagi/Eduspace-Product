@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenwood Public School, Pune | Home</title>
+    <meta name="description" content="Welcome to Greenwood Public School, Pune. Supporting academic excellence and holistic child development with our motto: All great achievements happen in small steps.">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Greenwood Public School, Pune | Quality Education">
+    <meta property="og:description" content="A premium educational environment supporting students to become confident, well-rounded individuals. Admissions closed now.">
+    <meta property="og:type" content="website">
+    
+    <!-- FontAwesome for standard icons -->
+        <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/edusphere-brand.css">
+</head>
+<body>
+
+    <!-- =========================================
+       TOP CONTACT BAR (with Admin Login)
+       ========================================= -->
+    <div class="top-contact-bar" id="topContactBar">
+        <div class="container top-contact-container">
+            <div class="top-contact-left">
+                <a href="tel:9876543210" class="top-contact-item"><i class="fa-solid fa-phone"></i> 9876543210</a>
+                <a href="mailto:info@greenwoodschool.edu.in" class="top-contact-item"><i class="fa-solid fa-envelope"></i> info@greenwoodschool.edu.in</a>
+            </div>
+            <div class="top-contact-right">
+                <div class="top-social-links">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <a href="#" class="admin-login-btn" id="adminLoginBtn"><i class="fa-solid fa-user-lock"></i> Admin Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================
+       ANNOUNCEMENT TICKER
+       ========================================= -->
+    <div class="ticker-bar" id="tickerBar">
+        <div class="container ticker-bar-container">
+            <div class="ticker-label">Announcements</div>
+            <div class="ticker-content-wrapper">
+                <div class="ticker-content">
+                    <div class="ticker-item"><span>?</span> Admissions closed for Pre-Primary to Class IX (2026-27 Academic Year). Enquire online today!</div>
+                    <div class="ticker-item"><span>?</span> Celebrating 100% SSC Results for the academic year! Congratulations to students and staff.</div>
+                    <div class="ticker-item"><span>?</span> Recipient of the Prestigious "Best Dynamic School" Award in the region.</div>
+                    <div class="ticker-item"><span>?</span> School hours for inquiry: Monday to Friday from 9:00 a.m. to 12:00 p.m.</div>
+                    <!-- Duplicate items for smooth continuous loop -->
+                    <div class="ticker-item"><span>?</span> Admissions closed for Pre-Primary to Class IX (2026-27 Academic Year). Enquire online today!</div>
+                    <div class="ticker-item"><span>?</span> Celebrating 100% SSC Results for the academic year! Congratulations to students and staff.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================
+       HEADER & NAVIGATION
+       ========================================= -->
+    <header class="main-header" id="mainHeader">
+        <div class="container header-container">
+            <!-- Branding Crest & Name -->
+            <a href="index.html" class="school-logo" id="schoolLogo">
+                <img src="assets/logo.svg" alt="Greenwood Public School Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="school-name">Greenwood Public School</span>
+                    <span class="school-motto">Model Colony, Pune</span>
+                    <span class="es-tagline">Powered by EduSphere</span>
+                </div>
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="about.html" class="nav-link">About Us <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> History of the School</a>
+                        <a href="vision-mission.html" class="dropdown-link"><i class="fa-solid fa-compass"></i> Vision &amp; Mission</a>
+                        <a href="principal-message.html" class="dropdown-link"><i class="fa-solid fa-user-tie"></i> Principal's Message</a>
+                        <a href="management.html" class="dropdown-link"><i class="fa-solid fa-hands-holding-child"></i> Management &amp; Philosophy</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="academics.html" class="nav-link">Academics <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="pre-primary-activities.html" class="dropdown-link"><i class="fa-solid fa-shapes"></i> Pre-Primary</a>
+                        <a href="primary-school.html" class="dropdown-link"><i class="fa-solid fa-book-open-reader"></i> Primary (Grades 1–4)</a>
+                        <a href="secondary-school.html" class="dropdown-link"><i class="fa-solid fa-school"></i> Secondary (SSC)</a>
+                        <a href="syllabus.html" class="dropdown-link"><i class="fa-solid fa-file-pdf"></i> Syllabus &amp; Curriculum</a>
+                        <a href="academic-calendar.html" class="dropdown-link"><i class="fa-solid fa-calendar-days"></i> Calendar &amp; Exams</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="admission.html" class="nav-link">Admissions <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="admission.html#admissionProcess" class="dropdown-link"><i class="fa-solid fa-clipboard-list"></i> Admission Process</a>
+                        <a href="admission.html#eligibility" class="dropdown-link"><i class="fa-solid fa-file-lines"></i> Eligibility &amp; Documents</a>
+                        <a href="admission-enquiry.html" class="dropdown-link"><i class="fa-solid fa-paper-plane"></i> Online Enquiry Form</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="facilities.html" class="nav-link">Facilities</a></div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="student-life.html" class="nav-link">Student Life <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="sports.html" class="dropdown-link"><i class="fa-solid fa-medal"></i> Sports &amp; Athletics</a>
+                        <a href="cultural-activities.html" class="dropdown-link"><i class="fa-solid fa-masks-theater"></i> Cultural Activities</a>
+                        <a href="pre-primary-activities.html" class="dropdown-link"><i class="fa-solid fa-shapes"></i> Pre-Primary Activities</a>
+                        <a href="educational-trips.html" class="dropdown-link"><i class="fa-solid fa-bus"></i> Educational Trips</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="achievements.html" class="nav-link">Achievements <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="achievements.html" class="dropdown-link"><i class="fa-solid fa-award"></i> Student Achievements</a>
+                        <a href="ssc-toppers.html" class="dropdown-link"><i class="fa-solid fa-trophy"></i> SSC Toppers</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="#" class="nav-link">More <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="gallery.html" class="dropdown-link"><i class="fa-solid fa-images"></i> Gallery</a>
+                        <a href="news.html" class="dropdown-link"><i class="fa-solid fa-bullhorn"></i> News &amp; Notices</a>
+                        <a href="faculty.html" class="dropdown-link"><i class="fa-solid fa-chalkboard-user"></i> Faculty &amp; Staff</a>
+                        <a href="parents.html" class="dropdown-link"><i class="fa-solid fa-users"></i> Parents Corner</a>
+                        <a href="alumni.html" class="dropdown-link"><i class="fa-solid fa-user-graduate"></i> Alumni</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></div>
+                <div class="nav-item"><a href="edusphere-platform.html" class="nav-link" style="color:#C79820; font-weight:700;"><i class="fa-solid fa-rocket" style="font-size:0.8rem;"></i> EduSphere</a></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =========================================
+       HERO CAROUSEL SECTION
+       ========================================= -->
+    <section class="hero" id="heroSection">
+        <div class="hero-slider">
+            <!-- Slide 1: School Facade -->
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1920&q=80');">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Welcome to Greenwood</span>
+                        <h1>Nurturing Minds, Building Characters</h1>
+                        <p>Providing a vibrant educational environment designed to help children grow into well-rounded, culturally aware global citizens.</p>
+                        <div class="hero-ctas">
+                            <a href="admission.html" class="btn btn-secondary"><i class="fa-solid fa-file-signature"></i> Admission Enquiry</a>
+                            <a href="about.html" class="btn btn-outline btn-white"><i class="fa-solid fa-circle-info"></i> Discover More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2: Classroom Scientific Lab -->
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1920&q=80');">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Academic Excellence</span>
+                        <h1>Where Curiosity Meets Innovation</h1>
+                        <p>State-of-the-art computer labs, science laboratories, and high pedagogical standards guiding students towards scholastic success.</p>
+                        <div class="hero-ctas">
+                            <a href="academics.html" class="btn btn-secondary"><i class="fa-solid fa-graduation-cap"></i> Our Curriculum</a>
+                            <a href="admission.html" class="btn btn-outline btn-white"><i class="fa-solid fa-ticket-simple"></i> Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3: Sports Field -->
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1920&q=80');">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Holistic Growth</span>
+                        <h1>Unlocking Physical &amp; Creative Talents</h1>
+                        <p>Vibrant sports programs, field trips, celebrations, and cultural festivals shape a balanced, fit, and socially integrated student body.</p>
+                        <div class="hero-ctas">
+                            <a href="student-life.html" class="btn btn-secondary"><i class="fa-solid fa-basketball"></i> Campus Life</a>
+                            <a href="contact.html" class="btn btn-outline btn-white"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Navigation -->
+        <button class="hero-control hero-prev" id="heroPrev" aria-label="Previous slide"><i class="fa fa-chevron-left"></i></button>
+        <button class="hero-control hero-next" id="heroNext" aria-label="Next slide"><i class="fa fa-chevron-right"></i></button>
+    </section>
+
+    <!-- =========================================
+       ADMISSION OPEN HIGHLIGHT BANNER
+       ========================================= -->
+    <div class="admission-banner" id="admissionBanner">
+        <div class="container admission-banner-container">
+            <div class="admission-banner-text">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span><strong>Admission closed</strong></span>
+            </div>
+            <a href="admission.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-arrow-right-to-bracket"></i> Apply Online</a>
+        </div>
+    </div>
+
+    <!-- =========================================
+       SPOTLIGHT INFO CARDS
+       ========================================= -->
+    <section class="section-padding bg-light" id="spotlightSection">
+        <div class="container">
+            <div class="grid grid-3 gap-xl">
+                <!-- Card 1 -->
+                <div class="info-card" id="infoCard1">
+                    <div class="info-icon"><i class="fa-solid fa-book-open"></i></div>
+                    <h3>Academic Excellence</h3>
+                    <p class="text-muted">Rigorous scholastic frameworks tailored to nurture logic, scientific inquiries, and language proficiencies.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="info-card" id="infoCard2">
+                    <div class="info-icon"><i class="fa-solid fa-award"></i></div>
+                    <h3>Holistic Training</h3>
+                    <p class="text-muted">Extensive emphasis on public speaking, environmental safety, discipline guidelines, and social awareness.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="info-card" id="infoCard3">
+                    <div class="info-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                    <h3>Sports &amp; Recreation</h3>
+                    <p class="text-muted">Wide array of outdoor games, annual sports matches, drill exercises, and regular physical education checks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+       WELCOME SEGMENT (SCHOOL INTRODUCTION)
+       ========================================= -->
+    <section class="section-padding" id="welcomeSection">
+        <div class="container">
+            <div class="welcome-grid">
+                <div class="welcome-image">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80" alt="Greenwood Public School Campus">
+                    <div class="welcome-badge">
+                        <span>ESTD. 1989</span>
+                        <p>Over 35 Years of Excellence</p>
+                    </div>
+                </div>
+                <div class="welcome-text">
+                    <h2 style="font-size: 2.2rem; margin-bottom: var(--space-md);">All Great Achievements Happen in Small Steps</h2>
+                    <p class="text-muted">I welcome you through our website to Greenwood Public School, a co–educational English Medium School, managed by a Public Trust under the chairmanship of the Education Trust Chairman. Every student is unique and we provide them with the opportunities to fructify their potential and build their self confidence so that they can face new challenges and grow into confident individuals.</p>
+                    <p class="text-muted">We have a committed team of educators who cater to every child's individual needs. Thus, every child progresses academically as well as develops their own unique talents.</p>
+                    <div style="margin-top: var(--space-lg); border-top: 1px solid var(--light-alt); padding-top: var(--space-md); display: flex; align-items: center; gap: var(--space-lg);">
+                        <div>
+                            <strong style="display: block; font-size: 1.1rem; color: var(--dark);">Greenwood Education Trust</strong>
+                            <span style="font-size: 0.85rem; color: var(--primary); font-weight: 600;">Founded in 1989</span>
+                        </div>
+                        <a href="about.html" class="btn btn-primary" style="margin-left: auto;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+       STATS COUNTER SECTION
+       ========================================= -->
+    <section class="stats" id="statsSection">
+        <div class="container">
+            <div class="grid grid-4 gap-xl">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="35">0</div>
+                    <div class="stat-label">Years of Legacy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="1200">0</div>
+                    <div class="stat-label">Happy Students</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="40">0</div>
+                    <div class="stat-label">Expert Educators</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">SSC Pass Rate (%)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EduSphere Digital Platform Section -->
+    <section class="section-padding es-platform-section" id="esPlatformSection" style="background: linear-gradient(135deg, #1E3A8A 0%, #172554 100%); color: #fff;">
+        <div class="container">
+            <div class="section-header" style="color:#fff;">
+                <span style="color:#C79820; font-weight:700; text-transform:uppercase; letter-spacing:2px; font-size:0.85rem;">Digital Learning Platform</span>
+                <h2 style="color:#fff; margin-top:0.5rem;">EduSphere — Redefining Education</h2>
+                <p style="color:rgba(255,255,255,0.8);">Our school is proud to partner with EduSphere, the next-generation digital education platform bringing AI-powered learning, parent dashboards, and real-time academic tracking to every student.</p>
+            </div>
+            <div class="grid grid-3 gap-xl">
+                <div class="es-platform-card" style="background:rgba(255,255,255,0.08); border-radius:16px; padding:2rem; border:1px solid rgba(199,152,32,0.3); text-align:center;">
+                    <div style="width:70px; height:70px; border-radius:50%; background:linear-gradient(135deg, #C79820, #E6C15C); display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; font-size:2rem;">??</div>
+                    <h3 style="color:#fff; margin-bottom:0.75rem;">Live Progress Dashboard</h3>
+                    <p style="color:rgba(255,255,255,0.7); font-size:0.95rem;">Parents and students can track attendance, grades, homework, and exam schedules in real time from any device.</p>
+                </div>
+                <div class="es-platform-card" style="background:rgba(255,255,255,0.08); border-radius:16px; padding:2rem; border:1px solid rgba(199,152,32,0.3); text-align:center;">
+                    <div style="width:70px; height:70px; border-radius:50%; background:linear-gradient(135deg, #C79820, #E6C15C); display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; font-size:2rem;">??</div>
+                    <h3 style="color:#fff; margin-bottom:0.75rem;">AI-Powered Tutoring</h3>
+                    <p style="color:rgba(255,255,255,0.7); font-size:0.95rem;">Personalized AI study assistant helps students with doubts in Maths, Science, English and more — available 24/7.</p>
+                </div>
+                <div class="es-platform-card" style="background:rgba(255,255,255,0.08); border-radius:16px; padding:2rem; border:1px solid rgba(199,152,32,0.3); text-align:center;">
+                    <div style="width:70px; height:70px; border-radius:50%; background:linear-gradient(135deg, #C79820, #E6C15C); display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; font-size:2rem;">??</div>
+                    <h3 style="color:#fff; margin-bottom:0.75rem;">Virtual Classrooms</h3>
+                    <p style="color:rgba(255,255,255,0.7); font-size:0.95rem;">Seamless online and hybrid learning with recorded sessions, digital assignments, and interactive whiteboards.</p>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:3rem;">
+                <a href="admission.html" class="btn" style="background:#C79820; color:#0F172A; font-weight:700; padding:1rem 2.5rem; border-radius:50px; font-size:1.05rem;">
+                    <i class="fa-solid fa-rocket"></i> Explore EduSphere Platform
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+       WHY CHOOSE US (Replaced Download App)
+       ========================================= -->
+    <section class="section-padding" id="whyChooseSection">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Greenwood?</h2>
+                <p>We are committed to providing a co-educational teaching environment supporting the child to become a well-rounded, confident, multi-culturally aware individual.</p>
+            </div>
+            <div class="grid grid-4 gap-lg">
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-award"></i></div>
+                    <h4>100% SSC Results</h4>
+                    <p>Consistent track record since the first batch in 1999-2000.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                    <h4>Experienced Faculty</h4>
+                    <p>Dedicated teachers committed to providing the best for every child.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4>Safe &amp; Secure Campus</h4>
+                    <p>24/7 CCTV surveillance and comprehensive safety protocols.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-flask-vial"></i></div>
+                    <h4>Modern Laboratories</h4>
+                    <p>State-of-the-art science and computer labs for hands-on learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+       FACILITIES & HIGHLIGHTS
+       ========================================= -->
+    <section class="section-padding bg-light" id="facilitiesHighlightsSection">
+        <div class="container">
+            <div class="section-header">
+                <h2>Facilities &amp; Highlights</h2>
+                <p>Greenwood Public School is equipped with modern facilities and maintains high standards designed to provide a safe, enriched, and positive learning environment.</p>
+            </div>
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-flask-vial"></i></div>
+                    <h3>Science &amp; Computer Labs</h3>
+                    <p>Providing hands-on practical learning experiences with state-of-the-art laboratory equipment and dedicated computing units. <a href="facilities.html#labs" class="text-primary" style="font-weight:600; font-size:0.9rem; display:block; margin-top:0.5rem;">Learn More &rarr;</a></p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-book"></i></div>
+                    <h3>Enriched Library</h3>
+                    <p>A vast collection of children's books, fiction, reference volumes, and academic publications promoting active reading habits. <a href="facilities.html#library" class="text-primary" style="font-weight:600; font-size:0.9rem; display:block; margin-top:0.5rem;">Learn More &rarr;</a></p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
+                    <h3>100% SSC Results</h3>
+                    <p>Proudly maintaining a consistent track record of 100% academic pass results in the secondary board examinations year after year. <a href="achievements.html" class="text-primary" style="font-weight:600; font-size:0.9rem; display:block; margin-top:0.5rem;">Learn More &rarr;</a></p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-video"></i></div>
+                    <h3>CCTV Safety &amp; Security</h3>
+                    <p>24/7 surveillance coverage across classrooms and corridors, managed gates, and comprehensive safety protocols. <a href="facilities.html#safety" class="text-primary" style="font-weight:600; font-size:0.9rem; display:block; margin-top:0.5rem;">Learn More &rarr;</a></p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+       NEWS, EVENTS & NOTICES PANELS
+       ========================================= -->
+    <section class="section-padding" id="newsSection">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest News &amp; Events</h2>
+                <p>Stay updated with the latest happenings at Greenwood Public School.</p>
+            </div>
+            <div class="announcements-grid">
+                <!-- Notice Board -->
+                <div class="notice-board" id="noticeBoard">
+                    <div class="notice-header">
+                        <h3><i class="fa-solid fa-bell text-primary"></i> Notice Board</h3>
+                        <a href="news.html" style="font-size: 0.85rem; font-weight: 600; color: var(--primary);">View All <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                    <div class="notice-list">
+                        <!-- Notice Item 1 -->
+                        <div class="notice-item">
+                            <div class="notice-date">
+                                <span>09</span>
+                                <span>May</span>
+                            </div>
+                            <div class="notice-text">
+                                <h4>Celebrating 100% SSC Result</h4>
+                                <p class="text-muted">Congratulations to all students and staff for achieving 100% SSC results for the academic year 2025-26.</p>
+                            </div>
+                        </div>
+                        <!-- Notice Item 2 -->
+                        <div class="notice-item">
+                            <div class="notice-date">
+                                <span>29</span>
+                                <span>Apr</span>
+                            </div>
+                            <div class="notice-text">
+                                <h4>Field Trip to Sinhgad Fort</h4>
+                                <p class="text-muted">Students of Classes VII and VIII visited Sinhgad Fort to learn about historical significance and ecological conservation.</p>
+                            </div>
+                        </div>
+                        <!-- Notice Item 3 -->
+                        <div class="notice-item">
+                            <div class="notice-date">
+                                <span>22</span>
+                                <span>Apr</span>
+                            </div>
+                            <div class="notice-text">
+                                <h4>Graduation Ceremony 2025-26</h4>
+                                <p class="text-muted">The graduation ceremony for the academic year 2025-26 was held successfully with parents and distinguished guests.</p>
+                            </div>
+                        </div>
+                        <!-- Notice Item 4 -->
+                        <div class="notice-item">
+                            <div class="notice-date">
+                                <span>16</span>
+                                <span>Apr</span>
+                            </div>
+                            <div class="notice-text">
+                                <h4>Pre-Primary Admissions 2026-27</h4>
+                                <p class="text-muted">Pre-Primary admissions have started for the academic year 2026-27. Contact the school office for more details.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Cards -->
+                <div style="display: flex; flex-direction: column; gap: var(--space-lg);">
+                    <!-- Quick Links Card -->
+                    <div class="info-card" style="text-align: left; background-color: var(--primary); color: var(--white); border-top: none;">
+                        <span style="color: var(--secondary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Quick Access</span>
+                        <h3 style="color: var(--white); margin: var(--space-sm) 0; font-size: 1.5rem;">Important Links</h3>
+                        <ul style="list-style: none; padding: 0; margin-bottom: var(--space-md);">
+                            <li style="margin-bottom: 0.5rem;"><a href="academics.html#calendar" style="color: rgba(255,255,255,0.9); font-size: 0.9rem;"><i class="fa-solid fa-calendar-days" style="margin-right: 8px; color: var(--secondary);"></i> Academic Calendar</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="parents.html#downloads" style="color: rgba(255,255,255,0.9); font-size: 0.9rem;"><i class="fa-solid fa-download" style="margin-right: 8px; color: var(--secondary);"></i> Downloads &amp; Circulars</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="gallery.html" style="color: rgba(255,255,255,0.9); font-size: 0.9rem;"><i class="fa-solid fa-images" style="margin-right: 8px; color: var(--secondary);"></i> Photo Gallery</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="faculty.html" style="color: rgba(255,255,255,0.9); font-size: 0.9rem;"><i class="fa-solid fa-users" style="margin-right: 8px; color: var(--secondary);"></i> Faculty &amp; Staff</a></li>
+                        </ul>
+                        <a href="news.html" class="btn btn-secondary" style="width: 100%;"><i class="fa-solid fa-newspaper"></i> All News &amp; Notices</a>
+                    </div>
+                    
+                    <!-- Admission Card -->
+                    <div class="info-card" style="text-align: left; border-top: 4px solid var(--success);">
+                        <span style="color: var(--success); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Admissions closed</span>
+                        <h3 style="margin: var(--space-sm) 0; font-size: 1.4rem;">Enrol Your Child Today</h3>
+                        <p class="text-muted" style="font-size: 0.9rem; margin-bottom: var(--space-md);">Age criteria limits apply. Get details on availability and fee structure easily.</p>
+                        <a href="admission.html" class="btn btn-outline" style="width: 100%;"><i class="fa-solid fa-arrow-right-to-bracket"></i> View Admission Process</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+       OUR COMMUNITY / LEADERSHIP PREVIEW
+       ========================================= -->
+    <section class="section-padding bg-light" id="communitySection">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Community</h2>
+                <p>Greenwood Public School is guided by visionary leaders committed to educational excellence.</p>
+            </div>
+            <div class="grid grid-2 gap-xl" style="max-width: 800px; margin: 0 auto;">
+                <div class="leader-card">
+                    <div class="leader-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" alt="Late Dr. Robert Williams - Founder" onerror="this.src='assets/school_building_hero.jpg'">
+                    </div>
+                    <div class="leader-info">
+                        <h4>Late Dr. Robert Williams</h4>
+                        <span class="leader-role">Founder</span>
+                    </div>
+                    <a href="about.html#management" class="btn btn-outline btn-sm" style="width: 100%; margin-top: var(--space-sm);">Read More</a>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" alt="Mr. David Fernandes - President" onerror="this.src='assets/school_building_hero.jpg'">
+                    </div>
+                    <div class="leader-info">
+                        <h4>Mr. David Fernandes</h4>
+                        <span class="leader-role">President</span>
+                    </div>
+                    <a href="about.html#management" class="btn btn-outline btn-sm" style="width: 100%; margin-top: var(--space-sm);">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+       FOOTER SECTION
+       ========================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <!-- Column 1: Brand / Motto / Map -->
+                <div class="footer-col">
+                    <div class="footer-brand">Greenwood School</div>
+                    <div class="es-powered-by" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg, #1E3A8A, #3B82F6); color:#fff; padding:4px 12px; border-radius:20px; font-size:0.75rem; font-weight:600; margin:0.5rem 0 1rem; border:1px solid rgba(199,152,32,0.4);">
+                        <img src="assets/edusphere-logo.svg" style="width:18px; height:18px;" alt="EduSphere">
+                        Powered by EduSphere
+                    </div>
+                    <p>Committed to providing a co-educational, values-driven teaching environment supporting children to become confident, culturally aware global leaders.</p>
+                    <p style="color: var(--secondary); font-weight: 600; font-size: 0.9rem;">"All great achievements happen in small steps"</p>
+                    <div class="footer-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.095!2d73.8567!3d18.5196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c01640000001%3A0x7a5e7a0000000001!2sModel+Colony%2C+Pune!5e0!3m2!1sen!2sin!4v1698000000000" width="100%" height="150" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="School Location"></iframe>
+                    </div>
+                </div>
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About School</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="facilities.html">Facilities</a></li>
+                        <li><a href="student-life.html">Student Life</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="news.html">News &amp; Notices</a></li>
+                        <li><a href="parents.html">Parents Corner</a></li>
+                        <li><a href="alumni.html">Alumni</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: Contact Info -->
+                <div class="footer-col">
+                    <h3>Get in Touch</h3>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <i class="fa fa-map-marker-alt"></i>
+                            <span>14, Green Avenue, Model Colony, Pune - 411016.</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <span>+91 9876543210</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <span>info@greenwoodschool.edu.in</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Column 4: Office Hours + Social -->
+                <div class="footer-col">
+                    <h3>Office Hours</h3>
+                    <p>For admissions, fee queries, and school visits:</p>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <i class="fa fa-clock" style="color: var(--secondary);"></i>
+                            <span>Monday to Friday:<br>9:00 AM to 5:00 PM</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-clock" style="color: var(--secondary);"></i>
+                            <span>Saturday:<br>9:00 AM to 4:00 PM</span>
+                        </li>
+                    </ul>
+                    <div class="footer-social" style="margin-top: var(--space-md);">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Bottom Credits -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-inner">
+                    <p>&copy; 2026 Greenwood Public School, Pune. All rights reserved.</p>
+                    <p>Digital Platform Powered by <strong>EduSphere</strong> — Knowledge Without Boundaries.</p>
+                    <p>Website Developed by <a href="https://greenwoodschool.edu.in/" target="_blank" rel="noopener">DYPC?EI Incubation Centre</a> | <a href="https://greenwoodschool.edu.in/" target="_blank" rel="noopener">EduSphere Dev Team</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa fa-chevron-up"></i></button>
+
+    <!-- Custom JS -->
+    <script src="js/school.config.js"></script>`n    <script src="js/api.js"></script>
+    <script src="js/admin-auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/content-loader.js"></script>
+</body>
+</html>

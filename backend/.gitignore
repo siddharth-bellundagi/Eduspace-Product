@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Environment (NEVER commit secrets)
+.env
+.env.local
+.env.production
+
+# Database files
+data/*.sqlite3
+data/*.db
+
+# Firebase credentials (legacy)
+serviceAccountKey.json
+
+# Uploaded files & temp
+uploads/.tmp/
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

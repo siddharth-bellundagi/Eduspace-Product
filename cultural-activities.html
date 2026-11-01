@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Activities & Celebrations | Greenwood Public School, Pune</title>
+    <meta name="description" content="Explore vibrant cultural activities, annual exhibitions, performing arts, and traditional celebrations at Greenwood Public School, Pune.">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .cultural-hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 2.5rem;
+            align-items: center;
+            margin-bottom: 3.5rem;
+        }
+        @media (max-width: 900px) {
+            .cultural-hero-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .cultural-photo-frame {
+            border-radius: var(--radius-lg, 16px);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            border: 4px solid var(--white);
+            height: 380px;
+            position: relative;
+        }
+        .cultural-photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .cultural-photo-frame:hover img {
+            transform: scale(1.03);
+        }
+        .cultural-badge {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            background: rgba(15, 23, 42, 0.85);
+            color: #f8fafc;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+        }
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2.5rem 0 3.5rem;
+        }
+        @media (max-width: 992px) {
+            .pillar-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 550px) {
+            .pillar-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .pillar-card {
+            background: var(--white);
+            border-radius: var(--radius-lg, 16px);
+            box-shadow: var(--shadow-md);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-top: 4px solid var(--primary);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .pillar-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+        }
+        .pillar-icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(30, 58, 138, 0.08);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin: 0 auto 1.25rem;
+        }
+        .events-timeline {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+        @media (max-width: 768px) {
+            .events-timeline {
+                grid-template-columns: 1fr;
+            }
+        }
+        .event-card {
+            background: var(--white);
+            border-radius: var(--radius-lg, 16px);
+            padding: 1.8rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+        .event-month-badge {
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 700;
+            padding: 0.6rem 0.9rem;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 80px;
+            flex-shrink: 0;
+        }
+        .event-month-badge span {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            opacity: 0.85;
+        }
+        .cultural-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 900px) {
+            .cultural-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .cultural-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .cultural-img-card {
+            border-radius: var(--radius-md, 12px);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background: var(--white);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.25s;
+        }
+        .cultural-img-card:hover {
+            transform: translateY(-4px);
+        }
+        .cultural-img-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+        .cultural-img-caption {
+            padding: 1rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--dark);
+            text-align: center;
+        }
+        .student-life-nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0 3rem;
+        }
+        .sl-nav-tab {
+            padding: 0.7rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            color: var(--dark);
+            background: #f1f5f9;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .sl-nav-tab:hover, .sl-nav-tab.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+    </style>
+<link rel="stylesheet" href="css/mobile.css"></head>
+<body>
+<div class="top-contact-bar">
+        <div class="container top-contact-container">
+            <div class="top-contact-left">
+                <a href="tel:9876543210" class="top-contact-item"><i class="fa-solid fa-phone"></i> 9876543210</a>
+                <a href="mailto:info@greenwoodschool.edu.in" class="top-contact-item"><i class="fa-solid fa-envelope"></i> info@greenwoodschool.edu.in</a>
+            </div>
+            <div class="top-contact-right">
+                <div class="top-social-links">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <a href="admin.html" class="admin-login-btn"><i class="fa-solid fa-user-lock"></i> Admin Login</a>
+            </div>
+        </div>
+</div>
+    <header class="main-header" id="mainHeader">
+        <div class="container header-container">
+            <a href="index.html" class="school-logo" id="schoolLogo">
+                <img src="assets/logo.svg" alt="Greenwood Public School Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="school-name">Greenwood Public School</span>
+                    <span class="school-motto">Model Colony, Pune</span>
+                </div>
+            </a>
+            <!-- Mobile Navigation Toggle --><button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="about.html" class="nav-link">About Us <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> History of the School</a>
+                        <a href="vision-mission.html" class="dropdown-link"><i class="fa-solid fa-compass"></i> Vision & Mission</a>
+                        <a href="principal-message.html" class="dropdown-link"><i class="fa-solid fa-user-tie"></i> Principal's Message</a>
+                        <a href="management.html" class="dropdown-link"><i class="fa-solid fa-hands-holding-child"></i> Management & Philosophy</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="academics.html" class="nav-link">Academics <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="pre-primary-activities.html" class="dropdown-link"><i class="fa-solid fa-shapes"></i> Pre-Primary</a>
+                        <a href="primary-school.html" class="dropdown-link"><i class="fa-solid fa-book-open-reader"></i> Primary (Grades 1–4)</a>
+                        <a href="secondary-school.html" class="dropdown-link"><i class="fa-solid fa-school"></i> Secondary (SSC)</a>
+                        <a href="syllabus.html" class="dropdown-link"><i class="fa-solid fa-file-pdf"></i> Syllabus & Curriculum</a>
+                        <a href="academic-calendar.html" class="dropdown-link"><i class="fa-solid fa-calendar-days"></i> Calendar & Exams</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="admission.html" class="nav-link">Admissions <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="admission.html#admissionProcess" class="dropdown-link"><i class="fa-solid fa-clipboard-list"></i> Admission Process</a>
+                        <a href="admission.html#eligibility" class="dropdown-link"><i class="fa-solid fa-file-lines"></i> Eligibility & Documents</a>
+                        <a href="admission-enquiry.html" class="dropdown-link"><i class="fa-solid fa-paper-plane"></i> Online Enquiry Form</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="facilities.html" class="nav-link">Facilities</a></div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="student-life.html" class="nav-link">Student Life <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="sports.html" class="dropdown-link"><i class="fa-solid fa-medal"></i> Sports & Athletics</a>
+                        <a href="cultural-activities.html" class="dropdown-link"><i class="fa-solid fa-masks-theater"></i> Cultural Activities</a>
+                        <a href="pre-primary-activities.html" class="dropdown-link"><i class="fa-solid fa-shapes"></i> Pre-Primary Activities</a>
+                        <a href="educational-trips.html" class="dropdown-link"><i class="fa-solid fa-bus"></i> Educational Trips</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="achievements.html" class="nav-link">Achievements <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="achievements.html" class="dropdown-link"><i class="fa-solid fa-award"></i> Student Achievements</a>
+                        <a href="ssc-toppers.html" class="dropdown-link"><i class="fa-solid fa-trophy"></i> SSC Toppers</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="#" class="nav-link">More <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="gallery.html" class="dropdown-link"><i class="fa-solid fa-images"></i> Gallery</a>
+                        <a href="news.html" class="dropdown-link"><i class="fa-solid fa-bullhorn"></i> News & Notices</a>
+                        <a href="faculty.html" class="dropdown-link"><i class="fa-solid fa-chalkboard-user"></i> Faculty & Staff</a>
+                        <a href="parents.html" class="dropdown-link"><i class="fa-solid fa-users"></i> Parents Corner</a>
+                        <a href="alumni.html" class="dropdown-link"><i class="fa-solid fa-user-graduate"></i> Alumni</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner" style="background-image: linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)), url('assets/SCHOOL EXHIBITION.JPG'); background-position: center; background-size: cover;">
+        <div class="container">
+            <h1>Cultural Activities & Celebrations</h1>
+            <div class="breadcrumbs"><a href="index.html" style="color: var(--secondary-light);">Home</a> <span>/</span> <a href="student-life.html" style="color: var(--secondary-light);">Student Life</a> <span>/</span> Cultural Activities</div>
+        </div>
+    </section>
+
+    <!-- Student Life Sub-Nav Pills -->
+    <div class="container" style="margin-top: 2rem;">
+        <div class="student-life-nav-tabs">
+            <a href="sports.html" class="sl-nav-tab"><i class="fa-solid fa-medal"></i> Sports & Athletics</a>
+            <a href="cultural-activities.html" class="sl-nav-tab active"><i class="fa-solid fa-masks-theater"></i> Cultural Activities</a>
+            <a href="pre-primary-activities.html" class="sl-nav-tab"><i class="fa-solid fa-shapes"></i> Pre-Primary Activities</a>
+            <a href="educational-trips.html" class="sl-nav-tab"><i class="fa-solid fa-bus"></i> Educational Trips</a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <section class="section" style="padding-top: 1rem;">
+        <div class="container">
+            <!-- Hero Grid -->
+            <div class="cultural-hero-grid">
+                <div>
+                    <span class="badge" style="background: rgba(30, 58, 138, 0.1); color: var(--primary); font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 50px; display: inline-block; margin-bottom: 0.75rem;">Creative Expression & Heritage</span>
+                    <h2 style="font-size: 2.1rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.25;">Nurturing Artistic Talents & Cultural Harmony</h2>
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: #334155; margin-bottom: 1.25rem;">
+                        At Greenwood Public School, education transcends textbooks and examination papers. We believe that true growth happens when students discover their voice, express their creativity, and celebrate India’s diverse cultural mosaic with joy and reverence.
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: #334155; margin-bottom: 1.5rem;">
+                        Through our rich tapestry of musical performances, theatrical productions, science and arts exhibitions, debates, and festival celebrations, every student is encouraged to step onto the stage, build self-confidence, and embrace aesthetic appreciation.
+                    </p>
+                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 0.6rem;">
+                            <i class="fa-solid fa-circle-check" style="color: var(--secondary); font-size: 1.2rem;"></i>
+                            <span style="font-weight: 600; color: var(--dark);">100% Student Participation</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem;">
+                            <i class="fa-solid fa-circle-check" style="color: var(--secondary); font-size: 1.2rem;"></i>
+                            <span style="font-weight: 600; color: var(--dark);">Annual Science & Art Expo</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem;">
+                            <i class="fa-solid fa-circle-check" style="color: var(--secondary); font-size: 1.2rem;"></i>
+                            <span style="font-weight: 600; color: var(--dark);">Inter-School Laurels</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cultural-photo-frame">
+                    <img src="assets/Cultural.jpg" alt="School Exhibition & Cultural Display at Greenwood Public School">
+                    <div class="cultural-badge"><i class="fa-solid fa-lightbulb"></i> Annual Innovation & Art Expo</div>
+                </div>
+            </div>
+
+            <!-- Four Pillars of Cultural Life -->
+            <div style="text-align: center; max-width: 750px; margin: 0 auto;">
+                <span class="badge" style="background: rgba(30, 58, 138, 0.1); color: var(--primary, #1E3A8A); font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 50px; display: inline-block; margin-bottom: 0.5rem;">Creative Spectrum</span>
+                <h2 style="font-size: 2rem; color: var(--primary); margin-bottom: 0.75rem;">Four Dimensions of Cultural Growth</h2>
+                <p style="color: #64748B; font-size: 1rem;">Providing multifaceted platforms where every child finds their creative spark and flourishes.</p>
+            </div>
+
+            <div class="pillar-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon-box"><i class="fa-solid fa-music"></i></div>
+                    <h3 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 0.6rem;">Music & Choral Arts</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #334155;">
+                        Vocal training, classical ragas, school choir hymns, and instrumental appreciation that instill rhythm, discipline, and emotional poise.
+                    </p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon-box"><i class="fa-solid fa-palette"></i></div>
+                    <h3 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 0.6rem;">Fine Arts & Crafts</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #334155;">
+                        Painting, sketching, origami, clay modelling, and eco-friendly craft workshops that stimulate spatial awareness and fine motor coordination.
+                    </p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon-box"><i class="fa-solid fa-comments"></i></div>
+                    <h3 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 0.6rem;">Elocution & Drama</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #334155;">
+                        English and Marathi debate, extempore speaking, poetry recitation, and dramatic skits that nurture articulate leaders and stage presence.
+                    </p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon-box"><i class="fa-solid fa-landmark"></i></div>
+                    <h3 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 0.6rem;">Annual Exhibitions</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #334155;">
+                        A signature school event where students present working scientific models, historical dioramas, and creative artwork to parents and guests.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Calendar of Major Celebrations -->
+            <div style="background: #f8fafc; border-radius: var(--radius-lg, 16px); padding: 3rem 2rem; margin: 3rem 0; border: 1px solid #e2e8f0;">
+                <div style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">
+                    <span class="badge" style="background: rgba(30, 58, 138, 0.1); color: var(--primary); font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 50px; display: inline-block; margin-bottom: 0.5rem;">Festive Calendar</span>
+                    <h2 style="font-size: 1.9rem; color: var(--primary); margin-bottom: 0.5rem;">Signature Annual Celebrations</h2>
+                    <p style="color: #64748B; font-size: 0.95rem;">Traditions and events that bring our students, teachers, and parent community together.</p>
+                </div>
+
+                <div class="events-timeline">
+                    <div class="event-card">
+                        <div class="event-month-badge">
+                            AUG
+                            <span>15th</span>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.35rem;">Independence Day & Investiture Ceremony</h4>
+                            <p style="font-size: 0.92rem; line-height: 1.6; color: #334155;">
+                                Solemn tricolor flag unfurling, march-past parade, patriotic choral presentations, and the formal induction of the Student Prefectorial Council.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-month-badge">
+                            SEP
+                            <span>5th</span>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.35rem;">Teachers' Day Gratitude Assembly</h4>
+                            <p style="font-size: 0.92rem; line-height: 1.6; color: #334155;">
+                                Senior students assume the mantle of educators for the day, organizing heartwarming musical dedications and cultural skits in honour of their mentors.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-month-badge">
+                            DEC
+                            <span>Annual</span>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.35rem;">Annual Science & Art Exhibition</h4>
+                            <p style="font-size: 0.92rem; line-height: 1.6; color: #334155;">
+                                A school-wide carnival of young innovators displaying working physics models, environmental conservation exhibits, and intricate artistic canvases.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-month-badge">
+                            JAN
+                            <span>26th</span>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.35rem;">Republic Day & Cultural Fest</h4>
+                            <p style="font-size: 0.92rem; line-height: 1.6; color: #334155;">
+                                Celebrations reflecting the Constitutional values of equality and fraternity, accompanied by vibrant regional folk dances representing diverse Indian states.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Showcase Section -->
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <span class="badge" style="background: rgba(30, 58, 138, 0.1); color: var(--primary); font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 50px; display: inline-block; margin-bottom: 0.5rem;">Moments of Brilliance</span>
+                <h2 style="font-size: 1.9rem; color: var(--primary); margin-bottom: 0.5rem;">Cultural Life in Action</h2>
+                <p style="color: #64748B; font-size: 0.95rem;">Capturing the enthusiasm, colour, and ingenuity of our students across school celebrations.</p>
+            </div>
+
+            <div class="cultural-gallery-grid">
+                <div class="cultural-img-card">
+                    <img src="assets/SCHOOL EXHIBITION.JPG" alt="School Exhibition models and projects" loading="lazy">
+                    <div class="cultural-img-caption">Annual Science & Innovation Expo</div>
+                </div>
+                <div class="cultural-img-card">
+                    <img src="assets/gallery_01.jpg" alt="Art, craft and creative projects" loading="lazy">
+                    <div class="cultural-img-caption">Creative Craft & Visual Expressions</div>
+                </div>
+                <div class="cultural-img-card">
+                    <img src="assets/gallery_01.jpg" alt="Painting and student artwork" loading="lazy">
+                    <div class="cultural-img-caption">Fine Arts & Painting Workshop</div>
+                </div>
+                <div class="cultural-img-card">
+                    <img src="assets/gallery_01.jpg" alt="Stage presentation and performance" loading="lazy">
+                    <div class="cultural-img-caption">Stage Presentations & Assembly Dramatics</div>
+                </div>
+                <div class="cultural-img-card">
+                    <img src="assets/gallery_01.jpg" alt="Festive and cultural celebration" loading="lazy">
+                    <div class="cultural-img-caption">Festive Displays & Cultural Heritage</div>
+                </div>
+                <div class="cultural-img-card">
+                    <img src="assets/gallery_01.jpg" alt="Creative exhibition works" loading="lazy">
+                    <div class="cultural-img-caption">Student Creations & Project Showcase</div>
+                </div>
+            </div>
+
+            <!-- Dynamic Announcements / Notices for Cultural Activities -->
+            <div id="studentLifeCulturalContainer" style="margin-top: 3.5rem;"></div>
+
+            <!-- Call to action block -->
+            <div style="background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%); border-radius: var(--radius-lg, 16px); padding: 3rem 2rem; color: var(--white); text-align: center; margin-top: 4rem; box-shadow: var(--shadow-xl);">
+                <h3 style="font-size: 1.8rem; margin-bottom: 0.75rem; color: var(--white);">Experience the Energy of Greenwood</h3>
+                <p style="max-width: 650px; margin: 0 auto 1.75rem; font-size: 1.05rem; opacity: 0.9;">
+                    We welcome prospective parents and visitors to witness how our co-curricular activities nurture well-rounded, expressive, and confident children.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="admission.html" class="btn btn-secondary"><i class="fa-solid fa-graduation-cap"></i> Apply for Admission</a>
+                    <a href="gallery.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.6); color: var(--white);"><i class="fa-solid fa-images"></i> View Full Gallery</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <div class="footer-brand">Greenwood School</div>
+                    <p>Committed to educational excellence since 1989.</p>
+                    <p style="color:var(--secondary);font-weight:600;font-size:0.9rem;">"All great achievements happen in small steps"</p>
+                    <div class="footer-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.095!2d73.8567!3d18.5196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c01640000001%3A0x7a5e7a0000000001!2sModel+Colony%2C+Pune!5e0!3m2!1sen!2sin!4v1698000000000" width="100%" height="150" style="border:0;border-radius:8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="School Location"></iframe>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About School</a></li>
+                        <li><a href="sports.html">Sports & Athletics</a></li>
+                        <li><a href="cultural-activities.html">Cultural Activities</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Get in Touch</h3>
+                    <ul class="footer-contact-info">
+                        <li><i class="fa fa-map-marker-alt"></i><span>14, Green Avenue, Model Colony, Pune - 411016.</span></li>
+                        <li><i class="fa fa-phone"></i><span>+91 9876543210</span></li>
+                        <li><i class="fa fa-envelope"></i><span>info@greenwoodschool.edu.in</span></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Office Hours</h3>
+                    <p>For admissions, fee queries, and school visits:</p>
+                    <ul class="footer-contact-info">
+                        <li><i class="fa fa-clock" style="color:var(--secondary);"></i><span>Monday to Friday:<br>9:00 AM to 5:00 PM</span></li>
+                        <li><i class="fa fa-clock" style="color:var(--secondary);"></i><span>Saturday:<br>9:00 AM to 4:00 PM</span></li>
+                    </ul>
+                    <div class="footer-social" style="margin-top:var(--space-md);">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-inner">
+                    <p>&copy; 2026 Greenwood Public School, Pune. All rights reserved.</p>
+                    <p>Managed in association with Greenwood Education Foundation.</p>
+                    <p>Website Developed by <a href="https://greenwoodschool.edu.in/" target="_blank" rel="noopener">EduSphere Technologies</a> | <a href="https://greenwoodschool.edu.in/" target="_blank" rel="noopener">EduSphere Dev Team</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-chevron-up fa-solid"></i></button>
+
+    <script src="js/school.config.js"></script>`n    <script src="js/api.js"></script>
+    <script src="js/admin-auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/content-loader.js"></script>
+</body>
+</html>

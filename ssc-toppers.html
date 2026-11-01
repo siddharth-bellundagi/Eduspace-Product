@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSC Board Toppers | Greenwood Public School, Pune</title>
+    <meta name="description" content="Meet the top SSC board scorers of Greenwood Public School, Pune. Celebrating academic champions with consistent 100% SSC results since 1999.">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .year-filter-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: var(--space-xl, 2.5rem);
+        }
+        .year-btn {
+            background-color: var(--white);
+            color: var(--dark);
+            border: 2px solid #cbd5e1;
+            padding: 8px 22px;
+            border-radius: var(--radius-full, 9999px);
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .year-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        .year-btn.active {
+            background-color: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+            box-shadow: 0 4px 14px rgba(30, 58, 138, 0.3);
+        }
+        .topper-podium {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            align-items: flex-end;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+        @media (max-width: 900px) {
+            .topper-podium {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .topper-card.rank-1 {
+                order: -1;
+            }
+        }
+        .topper-card {
+            background: var(--white);
+            border-radius: var(--radius-lg, 16px);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .topper-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+        }
+        .topper-card.rank-1 {
+            border: 3px solid #eab308;
+            box-shadow: 0 12px 30px rgba(234, 179, 8, 0.25);
+            transform: scale(1.04);
+            z-index: 2;
+        }
+        .topper-card.rank-1:hover {
+            transform: scale(1.04) translateY(-6px);
+        }
+        .topper-card.rank-2 {
+            border: 2px solid #94a3b8;
+        }
+        .topper-card.rank-3 {
+            border: 2px solid #d97706;
+        }
+        .topper-rank-crown {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 3;
+        }
+        .rank-crown-1 { background: #fef08a; color: #854d0e; }
+        .rank-crown-2 { background: #f1f5f9; color: #334155; }
+        .rank-crown-3 { background: #ffedd5; color: #9a3412; }
+
+        .topper-photo-wrap {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 2rem auto 1rem;
+            border-radius: 50%;
+            padding: 4px;
+            background: #f8fafc;
+        }
+        .topper-card.rank-1 .topper-photo-wrap {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #fef08a 0%, #eab308 100%);
+            box-shadow: 0 6px 18px rgba(234, 179, 8, 0.35);
+        }
+        .topper-card.rank-2 .topper-photo-wrap {
+            background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+            box-shadow: 0 4px 12px rgba(148, 163, 184, 0.3);
+        }
+        .topper-card.rank-3 .topper-photo-wrap {
+            background: linear-gradient(135deg, #ffedd5 0%, #f97316 100%);
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+        }
+        .topper-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            display: block;
+        }
+        .topper-photo-placeholder {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            border: 3px solid var(--white);
+        }
+        .percentage-pill {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+            color: var(--white);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+            margin: 8px 0;
+        }
+        .topper-card.rank-1 .percentage-pill {
+            background: linear-gradient(135deg, #ca8a04 0%, #a16207 100%);
+            box-shadow: 0 4px 12px rgba(202, 138, 4, 0.35);
+            font-size: 1.4rem;
+        }
+    </style>
+<link rel="stylesheet" href="css/mobile.css"></head>
+<body>
+    <!-- Top Contact Bar -->
+    <div class="top-contact-bar">
+        <div class="container top-contact-container">
+            <div class="top-contact-left">
+                <a href="tel:9876543210" class="top-contact-item"><i class="fa-solid fa-phone"></i> 9876543210</a>
+                <a href="mailto:info@greenwoodschool.edu.in" class="top-contact-item"><i class="fa-solid fa-envelope"></i> info@greenwoodschool.edu.in</a>
+            </div>
+            <div class="top-contact-right">
+                <div class="top-social-links">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <a href="admin.html" class="admin-login-btn"><i class="fa-solid fa-user-lock"></i> Admin Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="container header-container">
+            <a href="index.html" class="school-logo" id="schoolLogo">
+                <img src="assets/logo.svg" alt="Greenwood Public School Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="school-name">Greenwood Public School</span>
+                    <span class="school-motto">Model Colony, Pune</span>
+                </div>
+            </a>
+            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="about.html" class="nav-link">About Us <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> History of the School</a>
+                        <a href="vision-mission.html" class="dropdown-link"><i class="fa-solid fa-compass"></i> Vision & Mission</a>
+                        <a href="principal-message.html" class="dropdown-link"><i class="fa-solid fa-user-tie"></i> Principal's Message</a>
+                        <a href="management.html" class="dropdown-link"><i class="fa-solid fa-hands-holding-child"></i> Management & Philosophy</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="academics.html" class="nav-link">Academics <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="pre-primary-activities.html" class="dropdown-link"><i class="fa-solid fa-shapes"></i> Pre-Primary</a>
+                        <a href="primary-school.html" class="dropdown-link"><i class="fa-solid fa-book-open-reader"></i> Primary (Grades 1–4)</a>
+                        <a href="secondary-school.html" class="dropdown-link"><i class="fa-solid fa-school"></i> Secondary (SSC)</a>
+                        <a href="syllabus.html" class="dropdown-link"><i class="fa-solid fa-file-pdf"></i> Syllabus & Curriculum</a>
+                        <a href="academic-calendar.html" class="dropdown-link"><i class="fa-solid fa-calendar-days"></i> Calendar & Exams</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="admission.html" class="nav-link">Admissions <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="admission.html#admissionProcess" class="dropdown-link"><i class="fa-solid fa-clipboard-list"></i> Admission Process</a>
+                        <a href="admission.html#eligibility" class="dropdown-link"><i class="fa-solid fa-file-lines"></i> Eligibility & Documents</a>
+                        <a href="admission-enquiry.html" class="dropdown-link"><i class="fa-solid fa-paper-plane"></i> Online Enquiry Form</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="facilities.html" class="nav-link">Facilities</a></div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="student-life.html" class="nav-link">Student Life <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="sports.html" class="dropdown-link"><i class="fa-solid fa-medal"></i> Sports & Athletics</a>
+                        <a href="cultural-activities.html" class="dropdown-link"><i class="fa-solid fa-masks-theater"></i> Cultural Activities</a>
+                        <a href="pre-primary-activities.html" class="dropdown-link"><i class="fa-solid fa-shapes"></i> Pre-Primary Activities</a>
+                        <a href="educational-trips.html" class="dropdown-link"><i class="fa-solid fa-bus"></i> Educational Trips</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="achievements.html" class="nav-link">Achievements <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="achievements.html" class="dropdown-link"><i class="fa-solid fa-award"></i> Student Achievements</a>
+                        <a href="ssc-toppers.html" class="dropdown-link"><i class="fa-solid fa-trophy"></i> SSC Toppers</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="#" class="nav-link">More <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="gallery.html" class="dropdown-link"><i class="fa-solid fa-images"></i> Gallery</a>
+                        <a href="news.html" class="dropdown-link"><i class="fa-solid fa-bullhorn"></i> News & Notices</a>
+                        <a href="faculty.html" class="dropdown-link"><i class="fa-solid fa-chalkboard-user"></i> Faculty & Staff</a>
+                        <a href="parents.html" class="dropdown-link"><i class="fa-solid fa-users"></i> Parents Corner</a>
+                        <a href="alumni.html" class="dropdown-link"><i class="fa-solid fa-user-graduate"></i> Alumni</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner" style="background-image: url('assets/school_classroom.jpg');">
+        <div class="container">
+            <h1>SSC Board Toppers</h1>
+            <div class="breadcrumbs"><a href="index.html" style="color: var(--secondary-light);">Home</a> <span>/</span> <a href="achievements.html" style="color: var(--secondary-light);">Achievements</a> <span>/</span> SSC Toppers</div>
+        </div>
+    </section>
+
+    <!-- 100% Pass Legacy Card -->
+    <section class="content-section" style="padding-bottom: 2rem;">
+        <div class="container">
+            <div class="info-card" style="max-width: 850px; margin: 0 auto; text-align: center; border-top: 4px solid var(--success); box-shadow: var(--shadow-lg);">
+                <div style="display: inline-flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 0.5rem;">
+                    <i class="fa-solid fa-trophy" style="font-size: 2.5rem; color: var(--secondary);"></i>
+                    <span style="font-size: 3.5rem; font-weight: 800; color: var(--primary); font-family: var(--font-heading); line-height: 1;">100% Pass Record</span>
+                </div>
+                <h3 style="font-size: 1.4rem; margin: var(--space-sm) 0; color: var(--dark);">Unbroken Academic Excellence Since 1999–2000</h3>
+                <p class="text-muted" style="font-size: 1rem; line-height: 1.8;">
+                    Every year, our Class 10 (SSC) students deliver exemplary results with a continuous 100% pass percentage in the Maharashtra State Board examinations. We take immense pride in celebrating our highest scorers who have set benchmarks of academic brilliance.
+                </p>
+                <div style="margin-top: var(--space-md); padding-top: var(--space-md); border-top: 1px solid var(--light-alt, #e2e8f0); display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <span style="background-color: var(--success); color: var(--white); padding: 6px 18px; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 700;">
+                        <i class="fa-solid fa-certificate"></i> Maharashtra State Board (SSC)
+                    </span>
+                    <span style="background-color: var(--primary); color: var(--white); padding: 6px 18px; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 700;">
+                        <i class="fa-solid fa-star"></i> Annual Merit Honor Roll
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic SSC Toppers Showcase -->
+    <section class="content-section" style="background-color: var(--light, #f8fafc);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Top 3 Highest Scorers</h2>
+                <p id="topperBatchHeader">Honoring the top academic rankers of Greenwood Public School.</p>
+            </div>
+
+            <!-- Academic Year Filter Buttons -->
+            <div class="year-filter-bar" id="topperYearFilters">
+                <!-- Dynamically loaded from /api/ssc-toppers/years -->
+            </div>
+
+            <!-- Podium Showcase (Rank 2 - Rank 1 - Rank 3) -->
+            <div class="topper-podium" id="toppersPodium">
+                <!-- Dynamically loaded by content-loader.js loadSscToppers() -->
+            </div>
+
+            <!-- Additional Merit Achievers / Archive List -->
+            <div id="additionalToppersSection" style="display: none; margin-top: 3.5rem;">
+                <h3 style="text-align: center; font-size: 1.4rem; color: var(--dark); margin-bottom: 1.5rem;">Other Prominent Merit Scorers</h3>
+                <div class="grid grid-3 gap-lg" id="additionalToppersGrid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Culture Callout -->
+    <section class="content-section">
+        <div class="container">
+            <div class="grid grid-3 gap-lg" style="text-align: center;">
+                <div class="info-card" style="border-top: 3px solid var(--primary);">
+                    <i class="fa-solid fa-chalkboard-user" style="font-size: 2rem; color: var(--primary); margin-bottom: 0.75rem; display: block;"></i>
+                    <h4 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Dedicated Faculty Mentorship</h4>
+                    <p class="text-muted" style="font-size: 0.9rem;">Expert subject teachers conduct special revision batches, doubt-clearing clinics, and personal mentoring for board students.</p>
+                </div>
+                <div class="info-card" style="border-top: 3px solid var(--secondary);">
+                    <i class="fa-solid fa-file-pen" style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.75rem; display: block;"></i>
+                    <h4 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Rigorous Prelim Examinations</h4>
+                    <p class="text-muted" style="font-size: 0.9rem;">Multiple rounds of preliminary exams and paper-solving sessions ensure students are exam-confident and time-efficient.</p>
+                </div>
+                <div class="info-card" style="border-top: 3px solid var(--success);">
+                    <i class="fa-solid fa-heart-pulse" style="font-size: 2rem; color: var(--success); margin-bottom: 0.75rem; display: block;"></i>
+                    <h4 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Stress-Free Environment</h4>
+                    <p class="text-muted" style="font-size: 0.9rem;">Guidance sessions, career counseling, and holistic emotional support keep student morale and enthusiasm peak high.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <div class="footer-brand">Greenwood School</div>
+                    <p>Committed to educational excellence since 1989.</p>
+                    <p style="color:var(--secondary);font-weight:600;font-size:0.9rem;">"All great achievements happen in small steps"</p>
+                    <div class="footer-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.095!2d73.8567!3d18.5196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c01640000001%3A0x7a5e7a0000000001!2sModel+Colony%2C+Pune!5e0!3m2!1sen!2sin!4v1698000000000" width="100%" height="150" style="border:0;border-radius:8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="School Location"></iframe>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About School</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="facilities.html">Facilities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Get in Touch</h3>
+                    <ul class="footer-contact-info">
+                        <li><i class="fa fa-map-marker-alt"></i><span>14, Green Avenue, Model Colony, Pune - 411016.</span></li>
+                        <li><i class="fa fa-phone"></i><span>+91 9876543210</span></li>
+                        <li><i class="fa fa-envelope"></i><span>info@greenwoodschool.edu.in</span></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Office Hours</h3>
+                    <p>For admissions, fee queries, and school visits:</p>
+                    <ul class="footer-contact-info">
+                        <li><i class="fa fa-clock" style="color:var(--secondary);"></i><span>Monday to Friday:<br>9:00 AM to 5:00 PM</span></li>
+                        <li><i class="fa fa-clock" style="color:var(--secondary);"></i><span>Saturday:<br>9:00 AM to 4:00 PM</span></li>
+                    </ul>
+                    <div class="footer-social" style="margin-top:var(--space-md);">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-inner">
+                    <p>&copy; 2026 Greenwood Public School, Pune. All rights reserved.</p>
+                    <p>Managed in association with Greenwood Education Foundation.</p>
+                    <p>Website Developed by <a href="https://greenwoodschool.edu.in/" target="_blank" rel="noopener">EduSphere Technologies</a> | <a href="https://greenwoodschool.edu.in/" target="_blank" rel="noopener">EduSphere Dev Team</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-chevron-up fa-solid"></i></button>
+
+    <!-- Scripts -->
+    <script src="js/school.config.js"></script>`n    <script src="js/api.js"></script>
+    <script src="js/admin-auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/content-loader.js"></script>
+</body>
+</html>

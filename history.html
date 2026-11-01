@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of the School | Greenwood Public School, Pune</title>
+    <meta name="description" content="Discover the rich history of Greenwood Public School, founded in 1989 by Dr. Robert Williams in the historic cantonment town of Model Colony, Pune.">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .history-intro-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: var(--space-xl, 2.5rem);
+            align-items: center;
+            margin-bottom: var(--space-2xl, 3.5rem);
+        }
+        @media (max-width: 900px) {
+            .history-intro-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .history-img-frame {
+            border-radius: var(--radius-lg, 16px);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid var(--white);
+            position: relative;
+        }
+        .history-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .history-img-frame:hover img {
+            transform: scale(1.03);
+        }
+        .milestone-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fef08a;
+            color: #854d0e;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .photo-gallery-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: var(--space-xl, 2.5rem);
+        }
+        @media (max-width: 768px) {
+            .photo-gallery-strip {
+                grid-template-columns: 1fr;
+            }
+        }
+        .gallery-card {
+            border-radius: var(--radius-md, 12px);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background: var(--white);
+            border: 1px solid #e2e8f0;
+        }
+        .gallery-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-card-caption {
+            padding: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--dark);
+            text-align: center;
+        }
+    </style>
+<link rel="stylesheet" href="css/mobile.css"></head>
+<body>
+    <!-- Top Contact Bar -->
+    <div class="top-contact-bar">
+        <div class="container top-contact-container">
+            <div class="top-contact-left">
+                <a href="tel:9876543210" class="top-contact-item"><i class="fa-solid fa-phone"></i> 9876543210</a>
+                <a href="mailto:info@greenwoodschool.edu.in" class="top-contact-item"><i class="fa-solid fa-envelope"></i> info@greenwoodschool.edu.in</a>
+            </div>
+            <div class="top-contact-right">
+                <div class="top-social-links">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <a href="admin.html" class="admin-login-btn"><i class="fa-solid fa-user-lock"></i> Admin Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="container header-container">
+            <a href="index.html" class="school-logo" id="schoolLogo">
+                <img src="assets/logo.svg" alt="Greenwood Public School Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="school-name">Greenwood Public School</span>
+                    <span class="school-motto">Model Colony, Pune</span>
+                </div>
+            </a>
+            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="about.html" class="nav-link">About Us <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> History of the School</a>
+                        <a href="vision-mission.html" class="dropdown-link"><i class="fa-solid fa-compass"></i> Vision & Mission</a>
+                        <a href="principal-message.html" class="dropdown-link"><i class="fa-solid fa-user-tie"></i> Principal's Message</a>
+                        <a href="management.html" class="dropdown-link"><i class="fa-solid fa-hands-holding-child"></i> Management & Philosophy</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="academics.html" class="nav-link">Academics <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="pre-primary-activities.html" class="dropdown-link"><i class="fa-solid fa-shapes"></i> Pre-Primary</a>
+                        <a href="primary-school.html" class="dropdown-link"><i class="fa-solid fa-book-open-reader"></i> Primary (Grades 1–4)</a>
+                        <a href="secondary-school.html" class="dropdown-link"><i class="fa-solid fa-school"></i> Secondary (SSC)</a>
+                        <a href="syllabus.html" class="dropdown-link"><i class="fa-solid fa-file-pdf"></i> Syllabus & Curriculum</a>
+                        <a href="academic-calendar.html" class="dropdown-link"><i class="fa-solid fa-calendar-days"></i> Calendar & Exams</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="admission.html" class="nav-link">Admissions <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="admission.html#admissionProcess" class="dropdown-link"><i class="fa-solid fa-clipboard-list"></i> Admission Process</a>
+                        <a href="admission.html#eligibility" class="dropdown-link"><i class="fa-solid fa-file-lines"></i> Eligibility & Documents</a>
+                        <a href="admission-enquiry.html" class="dropdown-link"><i class="fa-solid fa-paper-plane"></i> Online Enquiry Form</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="facilities.html" class="nav-link">Facilities</a></div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="student-life.html" class="nav-link">Student Life <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="sports.html" class="dropdown-link"><i class="fa-solid fa-medal"></i> Sports & Athletics</a>
+                        <a href="cultural-activities.html" class="dropdown-link"><i class="fa-solid fa-masks-theater"></i> Cultural Activities</a>
+                        <a href="pre-primary-activities.html" class="dropdown-link"><i class="fa-solid fa-shapes"></i> Pre-Primary Activities</a>
+                        <a href="educational-trips.html" class="dropdown-link"><i class="fa-solid fa-bus"></i> Educational Trips</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="achievements.html" class="nav-link">Achievements <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="achievements.html" class="dropdown-link"><i class="fa-solid fa-award"></i> Student Achievements</a>
+                        <a href="ssc-toppers.html" class="dropdown-link"><i class="fa-solid fa-trophy"></i> SSC Toppers</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="#" class="nav-link">More <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="gallery.html" class="dropdown-link"><i class="fa-solid fa-images"></i> Gallery</a>
+                        <a href="news.html" class="dropdown-link"><i class="fa-solid fa-bullhorn"></i> News & Notices</a>
+                        <a href="faculty.html" class="dropdown-link"><i class="fa-solid fa-chalkboard-user"></i> Faculty & Staff</a>
+                        <a href="parents.html" class="dropdown-link"><i class="fa-solid fa-users"></i> Parents Corner</a>
+                        <a href="alumni.html" class="dropdown-link"><i class="fa-solid fa-user-graduate"></i> Alumni</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner" style="background-image: url('assets/school_building_hero.jpg');">
+        <div class="container">
+            <h1>History of the School</h1>
+            <div class="breadcrumbs"><a href="index.html" style="color: var(--secondary-light);">Home</a> <span>/</span> <a href="about.html" style="color: var(--secondary-light);">About Us</a> <span>/</span> History</div>
+        </div>
+    </section>
+
+    <!-- History Overview Section -->
+    <section class="content-section">
+        <div class="container">
+
+            <!-- A Timeless Legacy in Historic Model Colony -->
+            <div class="history-intro-grid">
+                <div>
+                    <span class="milestone-badge"><i class="fa-solid fa-landmark"></i> Founded in 1989</span>
+                    <h2 style="font-size: 2.2rem; color: var(--dark); margin-bottom: 1.25rem;">A Timeless Legacy in Historic Model Colony</h2>
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--dark-muted); margin-bottom: 1rem;">
+                        Nestled in the historic cantonment town of Model Colony, along the banks of the Mula River near Pune, Maharashtra, Greenwood Public School stands as a testament to a legacy built on faith, knowledge, discipline and service.
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--dark-muted); margin-bottom: 1rem;">
+                        Model Colony holds a distinguished place in Indian history as the site of the famous <strong>Battle of Model Colony in 1817</strong>. Following the battle, it developed into a major military cantonment and over the years, emerged as an important defence hub, home to significant military establishments, defence facilities and research institutions. Enriched by its military heritage and diverse community, Model Colony embodies the values of discipline, dedication, and a spirit of service.
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--dark-muted); margin-bottom: 1rem;">
+                        It was in this inspiring environment that our visionary founder, the <strong>Late Dr. Robert Williams</strong>, envisioned an educational institution committed to academic excellence and the holistic development of young minds. His dream was to make quality English-medium education accessible to the children of defence personnel, railway employees and the wider civilian community of Pune, creating opportunities for generations to learn, grow and succeed.
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--dark-muted);">
+                        Founded in 1989, Greenwood Public School was founded with a vision to bring holistic, value-based English medium education to the community. Guided by the enduring principles of faith, integrity, compassion and perseverance, the school began its journey with humble beginnings and a steadfast commitment to meaningful education.
+                    </p>
+                </div>
+                <div>
+                    <div class="history-img-frame" style="height: 380px;">
+                        <img src="assets/school_building_hero.jpg" alt="Greenwood Public School Building" onerror="this.src='assets/school_building_hero.jpg'">
+                    </div>
+                    <p style="text-align: center; font-size: 0.85rem; color: #64748b; margin-top: 8px;">
+                        <i class="fa-solid fa-camera"></i> Greenwood Public School Main Campus, Model Colony
+                    </p>
+                </div>
+            </div>
+
+            <!-- A Spiritual Leader and Guiding Light -->
+            <div class="info-card" style="border-left: 5px solid var(--primary); text-align: left; margin-bottom: var(--space-2xl, 3.5rem); background: var(--light, #f8fafc);">
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="font-size: 2rem; color: var(--primary); flex-shrink: 0;"><i class="fa-solid fa-cross"></i></div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; margin: 0 0 8px; color: var(--dark);">A Spiritual Leader and Guiding Light</h3>
+                        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--dark-muted); margin: 0 0 0.75rem;">
+                            <strong>Mr. David Fernandes</strong>, Bishop of the Regional Education Council of the Education Trust, is a respected spiritual leader with a strong academic background in arts, theology and pastoral studies. Dedicated to School Trust service, Christian education and student welfare, he brings extensive pastoral experience and has contributed significantly to the growth of the Regional Education Council.
+                        </p>
+                        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--dark-muted); margin: 0;">
+                            His spiritual leadership and blessings continue to guide Greenwood Public School in its mission of providing quality education and nurturing strong values.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- A Vision Strengthened by Dedicated Leadership -->
+            <div class="info-card" style="border-left: 5px solid var(--secondary); text-align: left; margin-bottom: var(--space-2xl, 3.5rem); background: var(--light, #f8fafc);">
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="font-size: 2rem; color: var(--secondary); flex-shrink: 0;"><i class="fa-solid fa-building-columns"></i></div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; margin: 0 0 8px; color: var(--dark);">A Vision Strengthened by Dedicated Leadership</h3>
+                        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--dark-muted); margin: 0 0 0.75rem;">
+                            <strong>Late Dr. A. K. Mehta</strong> was the Director of Greenwood Education Trust, Pune, Managing Trustee and Director of Greenwood Secondary School, Pune, and a distinguished legal academic, Attorney at Law, author, and social worker. He also served as Director of the National Academy of Continuing Legal Education and the Regional Education Board.
+                        </p>
+                        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--dark-muted); margin: 0 0 0.75rem;">
+                            A visionary educationist, he dedicated his life to provide quality education to the weaker sections of society. His dream was to establish Greenwood Public School as a centre of excellence, and his guidance and commitment contributed immensely to its growth and success.
+                        </p>
+                        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--dark-muted); margin: 0 0 0.75rem;">
+                            His outstanding contribution to legal education included numerous publications, 19 volumes of the <em>Manual of Maharashtra Laws</em>, and the textbook <em>Legislative Principles and Judicial Process</em>. He guided eight PhD scholars in law and received prestigious awards, including the IALS Lifetime Achievement Award for Excellence in Legal and Justice Education and the Global Law Dean&#39;s Forum Award 2017.
+                        </p>
+                        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--dark-muted); margin: 0;">
+                            His visionary leadership, remarkable scholarship and lifelong dedication to education and society will always be remembered with deep respect and gratitude.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- A Legacy That Inspires the Future -->
+            <div class="section-header">
+                <h2>A Legacy That Inspires the Future</h2>
+            </div>
+            <div style="margin-bottom: var(--space-2xl, 3.5rem);">
+                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--dark-muted); margin-bottom: 1rem;">
+                    Affiliated with the Maharashtra State Board of Secondary and Higher Secondary Education, Pune, Greenwood Public School continues to uphold the ideals upon which it was established. Through its commitment to academic achievement, character formation and the all-round development of every student, the school strives to nurture confident, responsible and compassionate individuals.
+                </p>
+                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--dark-muted); margin-bottom: 1rem;">
+                    From the founding vision of Dr. Robert Williams to the dedicated leadership and invaluable contributions of Late Dr. A. K. Mehta, the school&#39;s journey reflects a shared belief that education is not merely the pursuit of knowledge, but the foundation of character, opportunity and service to humanity.
+                </p>
+                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--dark-muted); margin-bottom: 1rem;">
+                    Today, Greenwood Public School carries this distinguished legacy forward with pride and purpose &mdash; empowering young minds with knowledge, grounding them in enduring values and inspiring them to become responsible citizens and leaders of tomorrow.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--primary); font-weight: 600; font-style: italic; text-align: center; margin-top: 2rem;">
+                    &#8220;Our legacy is measured not merely by the years behind us, but by the lives we shape, the dreams we nurture and the brighter future we strive to create.&#8221;
+                </p>
+            </div>
+
+            <!-- Campus Image Strip -->
+            <div class="section-header" style="margin-top: var(--space-xl);">
+                <h2>Campus &amp; Heritage Glimpses</h2>
+                <p>Spaces where generations of students have learned, played, and achieved greatness.</p>
+            </div>
+            <div class="photo-gallery-strip">
+                <div class="gallery-card">
+                    <img src="assets/school_entrance_gate.jpg" alt="School Entrance Gate" onerror="this.src='assets/school_building_hero.jpg'">
+                    <div class="gallery-card-caption"><i class="fa-solid fa-door-open"></i> Main Campus Entrance Gate</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="assets/classrrom.jpg" alt="Classroom Learning" onerror="this.src='assets/school_building_hero.jpg'">
+                    <div class="gallery-card-caption"><i class="fa-solid fa-chalkboard"></i> Interactive Learning Classrooms</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="assets/gallery_04.jpg" alt="Annual Science &amp; Art Exhibition" onerror="this.src='assets/school_sports.jpg'">
+                    <div class="gallery-card-caption"><i class="fa-solid fa-flask"></i> Annual Science &amp; Art Exhibition</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <div class="footer-brand">Greenwood School</div>
+                    <p>Committed to educational excellence since 1989.</p>
+                    <p style="color:var(--secondary);font-weight:600;font-size:0.9rem;">"All great achievements happen in small steps"</p>
+                    <div class="footer-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.095!2d73.8567!3d18.5196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c01640000001%3A0x7a5e7a0000000001!2sModel+Colony%2C+Pune!5e0!3m2!1sen!2sin!4v1698000000000" width="100%" height="150" style="border:0;border-radius:8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="School Location"></iframe>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About School</a></li>
+                        <li><a href="history.html">School History</a></li>
+                        <li><a href="vision-mission.html">Vision & Mission</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Get in Touch</h3>
+                    <ul class="footer-contact-info">
+                        <li><i class="fa fa-map-marker-alt"></i><span>14, Green Avenue, Model Colony, Pune - 411016.</span></li>
+                        <li><i class="fa fa-phone"></i><span>+91 9876543210</span></li>
+                        <li><i class="fa fa-envelope"></i><span>info@greenwoodschool.edu.in</span></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Office Hours</h3>
+                    <p>For admissions, fee queries, and school visits:</p>
+                    <ul class="footer-contact-info">
+                        <li><i class="fa fa-clock" style="color:var(--secondary);"></i><span>Monday to Friday:<br>9:00 AM to 5:00 PM</span></li>
+                        <li><i class="fa fa-clock" style="color:var(--secondary);"></i><span>Saturday:<br>9:00 AM to 4:00 PM</span></li>
+                    </ul>
+                    <div class="footer-social" style="margin-top:var(--space-md);">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-inner">
+                    <p>&copy; 2026 Greenwood Public School, Pune. All rights reserved.</p>
+                    <p>Managed in association with Greenwood Education Foundation.</p>
+                    <p>Website Developed by <a href="https://greenwoodschool.edu.in/" target="_blank" rel="noopener">EduSphere Technologies</a> | <a href="https://greenwoodschool.edu.in/" target="_blank" rel="noopener">EduSphere Dev Team</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-chevron-up fa-solid"></i></button>
+
+    <script src="js/school.config.js"></script>`n    <script src="js/api.js"></script>
+    <script src="js/admin-auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

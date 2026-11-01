@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parents Corner | Greenwood Public School, Pune</title>
+    <meta name="description" content="Resources for parents at Greenwood Public School — downloads, circulars, PTA information, and parent resources.">
+        <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .class-filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 12px;
+        }
+        .class-filter-btn {
+            padding: 6px 16px;
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            background: white;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .class-filter-btn:hover {
+            background: rgba(var(--primary-rgb, 26, 54, 93), 0.08);
+        }
+        .class-filter-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        .download-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 1rem 1.25rem;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.06);
+            margin-bottom: 10px;
+            transition: box-shadow 0.2s ease, transform 0.15s ease;
+        }
+        .download-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transform: translateY(-1px);
+        }
+        .download-card .file-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        .download-card .file-icon.pdf { background: #FEF2F2; color: #EF4444; }
+        .download-card .file-icon.doc { background: #EFF6FF; color: #3B82F6; }
+        .download-card .file-meta { flex: 1; min-width: 0; }
+        .download-card .file-meta h4 { font-size: 0.95rem; margin: 0 0 4px 0; }
+        .download-card .file-meta .meta-tags { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+        .download-card .file-meta .meta-tags span {
+            font-size: 0.73rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        .download-card .file-meta .tag-class { background: #DBEAFE; color: #1E40AF; }
+        .download-card .file-meta .tag-category { background: #FEF3C7; color: #92400E; }
+        .download-card .file-meta .tag-date { color: #888; font-weight: 400; }
+        .download-card .download-btn {
+            padding: 8px 18px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.2s ease;
+        }
+        .download-card .download-btn:hover { background: var(--primary-dark, #132d4a); }
+        .empty-downloads {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #888;
+        }
+        .empty-downloads i { font-size: 3rem; opacity: 0.3; margin-bottom: 1rem; display: block; }
+        @media (max-width: 768px) {
+            .download-card { flex-direction: column; text-align: center; gap: 10px; }
+            .download-card .download-btn { width: 100%; text-align: center; }
+            .class-filter-bar { justify-content: center; }
+        }
+    </style>
+<link rel="stylesheet" href="css/mobile.css"></head>
+<body>
+    <div class="top-contact-bar"><div class="container top-contact-container"><div class="top-contact-left"><a href="tel:9876543210" class="top-contact-item"><i class="fa-solid fa-phone"></i> 9876543210</a><a href="mailto:info@greenwoodschool.edu.in" class="top-contact-item"><i class="fa-solid fa-envelope"></i> info@greenwoodschool.edu.in</a></div><div class="top-contact-right"><div class="top-social-links"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-youtube"></i></a></div><a href="#" class="admin-login-btn"><i class="fa-solid fa-user-lock"></i> Admin Login</a></div></div></div>
+    <header class="main-header" id="mainHeader"><div class="container header-container"><a href="index.html" class="school-logo"><img src="assets/logo.svg" alt="Logo" class="logo-img"><div class="logo-text"><span class="school-name">Greenwood Public School</span></div></a><button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button><nav class="nav-menu" id="navMenu"><div class="nav-item"><a href="index.html" class="nav-link">Home</a></div><div class="nav-item nav-item-dropdown"><a href="about.html" class="nav-link">About Us <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a><div class="dropdown-menu">
+                        <a href="history.html" class="dropdown-link">History of the School</a>
+                        <a href="vision-mission.html" class="dropdown-link">Vision & Mission</a>
+                        <a href="principal-message.html" class="dropdown-link">Principal's Message</a>
+                        <a href="management.html" class="dropdown-link">Management & Philosophy</a>
+                    </div></div><div class="nav-item nav-item-dropdown"><a href="academics.html" class="nav-link">Academics <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a><div class="dropdown-menu"><a href="academics.html#prePrimary" class="dropdown-link">Pre-Primary</a><a href="pre-primary-activities.html" class="dropdown-link">Pre-Primary Activities</a><a href="academics.html#primary" class="dropdown-link">Primary</a><a href="academics.html#secondary" class="dropdown-link">Secondary (SSC)</a></div></div><div class="nav-item nav-item-dropdown"><a href="admission.html" class="nav-link">Admissions <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a><div class="dropdown-menu"><a href="admission.html#admissionProcess" class="dropdown-link">Admission Process</a><a href="admission.html#eligibility" class="dropdown-link">Eligibility & Documents</a><a href="admission.html#enquiryForm" class="dropdown-link">Enquiry Form</a></div></div><div class="nav-item"><a href="facilities.html" class="nav-link">Facilities</a></div><div class="nav-item nav-item-dropdown"><a href="student-life.html" class="nav-link">Student Life <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a><div class="dropdown-menu"><a href="student-life.html#sports" class="dropdown-link">Sports</a><a href="student-life.html#cultural" class="dropdown-link">Cultural Activities</a><a href="pre-primary-activities.html" class="dropdown-link">Pre-Primary Activities</a><a href="student-life.html#trips" class="dropdown-link">Educational Trips</a></div></div><div class="nav-item nav-item-dropdown"><a href="achievements.html" class="nav-link">Achievements <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a><div class="dropdown-menu"><a href="achievements.html" class="dropdown-link">Student Achievements</a><a href="ssc-toppers.html" class="dropdown-link">SSC Toppers</a></div></div><div class="nav-item nav-item-dropdown"><a href="#" class="nav-link">More <i class="fa fa-chevron-down" style="font-size:0.7rem;"></i></a><div class="dropdown-menu dropdown-menu-right"><a href="gallery.html" class="dropdown-link">Gallery</a><a href="news.html" class="dropdown-link">News & Notices</a><a href="faculty.html" class="dropdown-link">Faculty & Staff</a><a href="parents.html" class="dropdown-link">Parents Corner</a><a href="alumni.html" class="dropdown-link">Alumni</a></div></div><div class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></div></nav></div></header>
+
+    <section class="page-banner" style="background-image: url('assets/school_building_hero.jpg');"><div class="container"><h1>Parents Corner</h1><div class="breadcrumbs"><a href="index.html" style="color: var(--secondary-light);">Home</a> <span>/</span> Parents Corner</div></div></section>
+
+    <!-- --- PARENT DOWNLOADS / CIRCULARS (Dynamic, Class-wise) --- -->
+    <section class="content-section" id="parentDownloads" style="background-color: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-file-arrow-down" style="color: var(--primary); margin-right: 8px;"></i> Downloads & Circulars</h2>
+                <p>Download important circulars, forms, syllabus, and school documents. Filter by your child's class.</p>
+            </div>
+
+            <!-- Class-wise Filter Buttons -->
+            <div class="class-filter-bar" id="classFilterBar">
+                <button class="class-filter-btn active" data-class="all">All Classes</button>
+                <button class="class-filter-btn" data-class="Nursery">Nursery</button>
+                <button class="class-filter-btn" data-class="Jr. KG">Jr. KG</button>
+                <button class="class-filter-btn" data-class="Sr. KG">Sr. KG</button>
+                <button class="class-filter-btn" data-class="Class 1">Class 1</button>
+                <button class="class-filter-btn" data-class="Class 2">Class 2</button>
+                <button class="class-filter-btn" data-class="Class 3">Class 3</button>
+                <button class="class-filter-btn" data-class="Class 4">Class 4</button>
+                <button class="class-filter-btn" data-class="Class 5">Class 5</button>
+                <button class="class-filter-btn" data-class="Class 6">Class 6</button>
+                <button class="class-filter-btn" data-class="Class 7">Class 7</button>
+                <button class="class-filter-btn" data-class="Class 8">Class 8</button>
+                <button class="class-filter-btn" data-class="Class 9">Class 9</button>
+                <button class="class-filter-btn" data-class="Class 10">Class 10</button>
+            </div>
+
+            <!-- Downloads List (dynamically loaded) -->
+            <div id="downloadsListContainer" class="placeholder-content">
+                <div class="empty-downloads">
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                    <p>Loading downloads...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- PARENT RESOURCES --- -->
+    <section class="content-section" id="resources" style="background-color: var(--light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Parent Resources</h2>
+                <p>Helpful links and tools for parents.</p>
+            </div>
+            <div class="grid grid-2 gap-lg">
+                <div class="info-card" style="text-align: left; border-top: 4px solid var(--secondary);">
+                    <h3 style="font-size: 1.1rem; margin-bottom: var(--space-sm);"><i class="fa-solid fa-calendar-days" style="color: var(--secondary); margin-right: 8px;"></i> Academic Calendar</h3>
+                    <p class="text-muted" style="font-size: 0.9rem;">View the complete academic calendar with term dates, exam schedules, holidays, and important events.</p>
+                    <a href="academics.html#calendar" class="btn btn-outline btn-sm" style="margin-top: var(--space-md); width: 100%;">View Calendar</a>
+                </div>
+                <div class="info-card" style="text-align: left; border-top: 4px solid var(--success);">
+                    <h3 style="font-size: 1.1rem; margin-bottom: var(--space-sm);"><i class="fa-solid fa-phone" style="color: var(--success); margin-right: 8px;"></i> Contact School</h3>
+                    <p class="text-muted" style="font-size: 0.9rem;">Have questions? Reach out to us via phone, email, or visit during office hours for any assistance.</p>
+                    <a href="contact.html" class="btn btn-outline btn-sm" style="margin-top: var(--space-md); width: 100%;">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container"><div class="footer-top"><div class="footer-col"><div class="footer-brand">Greenwood School</div><p>Committed to educational excellence since 1989.</p><p style="color:var(--secondary);font-weight:600;font-size:0.9rem;">"All great achievements happen in small steps"</p><div class="footer-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.095!2d73.8567!3d18.5196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c01640000001%3A0x7a5e7a0000000001!2sModel+Colony%2C+Pune!5e0!3m2!1sen!2sin!4v1698000000000" width="100%" height="150" style="border:0;border-radius:8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="School Location"></iframe></div></div><div class="footer-col"><h3>Quick Links</h3><ul class="footer-links"><li><a href="about.html">About School</a></li><li><a href="academics.html">Academics</a></li><li><a href="admission.html">Admissions</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact Us</a></li></ul></div><div class="footer-col"><h3>Get in Touch</h3><ul class="footer-contact-info"><li><i class="fa fa-map-marker-alt"></i><span>14, Green Avenue, Model Colony, Pune - 411016.</span></li><li><i class="fa fa-phone"></i><span>+91 9876543210</span></li><li><i class="fa fa-envelope"></i><span>info@greenwoodschool.edu.in</span></li></ul></div><div class="footer-col"><h3>Office Hours</h3><p>For admissions, fee queries, and school visits:</p><ul class="footer-contact-info"><li><i class="fa fa-clock" style="color:var(--secondary);"></i><span>Monday to Friday:<br>9:00 AM to 5:00 PM</span></li><li><i class="fa fa-clock" style="color:var(--secondary);"></i><span>Saturday:<br>9:00 AM to 4:00 PM</span></li></ul><div class="footer-social" style="margin-top:var(--space-md);"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-youtube"></i></a></div></div></div><div class="footer-bottom"><div class="footer-bottom-inner"><p>&copy; 2026 Greenwood Public School, Pune. All rights reserved.</p><p>Managed in association with Greenwood Education Foundation.</p><p>Website Developed by <a href="https://greenwoodschool.edu.in/" target="_blank" rel="noopener">EduSphere Technologies</a> | <a href="https://greenwoodschool.edu.in/" target="_blank" rel="noopener">EduSphere Dev Team</a>.</p></div></div></div></footer>
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop"><i class="fa fa-chevron-up"></i></button>
+    <script src="js/school.config.js"></script>`n    <script src="js/api.js"></script>
+    <script src="js/admin-auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/content-loader.js"></script>
+</body>
+</html>
