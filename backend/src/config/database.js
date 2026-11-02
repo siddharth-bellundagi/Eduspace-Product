@@ -1,27 +1,44 @@
+
 /**
  * database.js — SQLite Database Connection & Schema Initialization
  *
  * Provides a promise-based query interface over SQLite (sqlite3).
  * Compatible with local development and lightweight deployments.
  */
-const sqlite3  = require('sqlite3').verbose();
-const path     = require('path');
-const logger   = require('../utils/logger');
 
-const DB_PATH = process.env.DB_PATH || path.join(__dirname, '../../data/edusphere.sqlite3');
+const sqlite3 = require('sqlite3').verbose();
+const path = require('path');
+const fs = require('fs');
+const logger = require('../utils/logger');
 
-// Open SQLite database (creates file if not exists)
+// Database path
+const DB_PATH = process.env.DB_PATH ||
+  path.join(__dirname, '../../data/edusphere.sqlite3');
+
+// Ensure the database directory exists before opening SQLite
+try {
+  fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
+  logger.info(`Database directory ready: ${path.dirname(DB_PATH)}`);
+} catch (err) {
+  logger.error('Failed to create database directory:', err.message);
+  throw err;
+}
+
+// Open SQLite database (creates file if it does not exist)
 const sqliteDb = new sqlite3.Database(DB_PATH, (err) => {
   if (err) {
-    logger.error('❌ Failed to open SQLite database:', err.message);
+    logger.error('Failed to open SQLite database:', err.message);
     throw err;
   }
+
   // Enable WAL mode for better concurrency
   sqliteDb.run('PRAGMA journal_mode=WAL;');
   sqliteDb.run('PRAGMA foreign_keys=ON;');
-  // Wait up to 5 seconds if the database is locked (prevents SQLITE_BUSY)
+
+  // Wait up to 5 seconds if the database is locked
   sqliteDb.run('PRAGMA busy_timeout=5000;');
-  logger.info(`✅ SQLite database opened: ${DB_PATH}`);
+
+  logger.info(`SQLite database opened: ${DB_PATH}`);
 });
 
 /**
@@ -42,7 +59,7 @@ const db = {
   },
 
   /**
-   * Fetch a single row (SELECT ... LIMIT 1)
+   * Fetch a single row
    */
   get(sql, params = []) {
     return new Promise((resolve, reject) => {
@@ -54,7 +71,7 @@ const db = {
   },
 
   /**
-   * Fetch multiple rows (SELECT ...)
+   * Fetch multiple rows
    */
   all(sql, params = []) {
     return new Promise((resolve, reject) => {
@@ -66,7 +83,7 @@ const db = {
   },
 
   /**
-   * Execute a raw SQL string (for schema creation etc.)
+   * Execute a raw SQL string
    */
   exec(sql) {
     return new Promise((resolve, reject) => {
@@ -78,7 +95,7 @@ const db = {
   },
 
   /**
-   * Close the database (graceful shutdown)
+   * Close the database gracefully
    */
   close() {
     return new Promise((resolve, reject) => {
@@ -94,7 +111,7 @@ const db = {
  * Initialize all database tables and indexes
  */
 async function initDatabase() {
-  logger.info('⏳ Initializing SQLite database schema...');
+  logger.info('Initializing SQLite database schema...');
 
   const statements = [
     // Users / Admin table
@@ -339,12 +356,8 @@ async function initDatabase() {
     `CREATE INDEX IF NOT EXISTS idx_student_life_cat ON student_life(category, is_active)`,
   ];
 
-  // ─── Schema Migrations ─────────────────────────────────────
-  // ALTER TABLE statements for adding columns to existing databases.
-  // These are safe to run repeatedly — SQLite will throw "duplicate column"
-  // which we silently ignore.
+  // Schema migrations
   const migrations = [
-    // Task 2: academics — missing columns needed by programs, calendar, exams
     `ALTER TABLE academics ADD COLUMN section_key TEXT DEFAULT ''`,
     `ALTER TABLE academics ADD COLUMN highlights TEXT DEFAULT ''`,
     `ALTER TABLE academics ADD COLUMN timings TEXT DEFAULT ''`,
@@ -353,11 +366,7 @@ async function initDatabase() {
     `ALTER TABLE academics ADD COLUMN event_date TEXT DEFAULT ''`,
     `ALTER TABLE academics ADD COLUMN class_grade TEXT DEFAULT ''`,
     `ALTER TABLE academics ADD COLUMN exam_type TEXT DEFAULT ''`,
-
-    // Task 3: upcoming_events — type column for alumni events
     `ALTER TABLE upcoming_events ADD COLUMN type TEXT DEFAULT 'general'`,
-
-    // Task 4: student_achievements — year & recipient for awards module
     `ALTER TABLE student_achievements ADD COLUMN year TEXT DEFAULT ''`,
     `ALTER TABLE student_achievements ADD COLUMN recipient TEXT DEFAULT ''`,
   ];
@@ -366,26 +375,26 @@ async function initDatabase() {
     try {
       await db.run(stmt);
     } catch (err) {
-      // Ignore "already exists" errors
-      if (!err.message.includes('already exists') && !err.message.includes('duplicate')) {
-        logger.warn(`⚠️  Schema warning: ${err.message}`);
+      if (
+        !err.message.includes('already exists') &&
+        !err.message.includes('duplicate')
+      ) {
+        logger.warn(`Schema warning: ${err.message}`);
       }
     }
   }
 
-  // Run migrations (safe: "duplicate column name" errors are silently ignored)
   for (const migration of migrations) {
     try {
       await db.run(migration);
     } catch (err) {
-      // Expected error when column already exists — silently ignore
       if (!err.message.includes('duplicate column name')) {
-        logger.warn(`⚠️  Migration warning: ${err.message}`);
+        logger.warn(`Migration warning: ${err.message}`);
       }
     }
   }
 
-  logger.info('✅ SQLite Schema & Indexes initialized successfully');
+  logger.info('SQLite Schema & Indexes initialized successfully');
 }
 
 module.exports = { db, initDatabase };
